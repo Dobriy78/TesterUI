@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head>
+<title>DEPO/X Tester</title>
+<link href="styles/main.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/prettyFile.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+</head>
+<body>
+<div class="header">
+<div class="col-wrap1">
+<div class="col-wrap2">
+<div class="col1"><h2>DEPO/X Tester</h2></div>
+<div class="col2">
+
+<!--здесь ввод для выбора сценариев-->
+<form method="POST" id="myForm"/>
+<!--Выбор Tester.jar-->
+<input type="file" id="testerJar" class='btn btn-info' accept="application/x-jar"/>
+<input type="hidden" id="testerJarPath"/>
+<!--Выбор TesterGW.xml-->
+<input type="file" id="testerGW" class='btn btn-info' accept="application/xml"/>
+<input type="hidden" id="testerGWPath"/>
+<!--Выбор сценариев-->
+<input type="file" id="file" multiple class='btn btn-info' accept="application/xml"/>
+<input type="hidden" id="textArea"/>
+</form>
+<!--здесь ввод для выбора сценариев-->
+
+<!--здесь вывод select menu-->
+<div id="menu"></div>
+<!--здесь вывод select menu-->
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+
+<div class="main">
+<div class="text_container_l">
+<div class="text_container_r">
+<div class="text_l">
+<!--здесь вывод описания сценария-->
+<div id="scenarioDescription" class="textDescLog" ></div>
+<!--здесь вывод описания сценария-->
+</div>
+<div class="text_r">
+<!--здесь вывод лога работы сценария-->
+<div id="scenarioLog" class="textDescLog"></div>
+<!--здесь вывод лога работы сценария-->
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/all.js"></script>
+</body>

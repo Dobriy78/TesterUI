@@ -1,0 +1,21 @@
+{
+  "name": "TESTER DEPOX-3",
+  "description": "UI for DepoX-3 tester",
+  "version": "12.02.2012.0001",
+  "main": "index.html",
+  "keywords": [ "ui", "node-webkit", "depox/3", "tester" ],
+  "window": {
+    "icon": "img/test_64.png",
+    "toolbar": true,
+    "fullscreen": false,
+    "width": 1024,
+    "height": 768,
+    "title": "TESTER DEPOX/3",
+    "resizable": true,
+    "position": "mouse"
+  },
+  "webkit": {
+    "plugin": true,
+    "java": true
+  }
+}
