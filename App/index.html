@@ -15,10 +15,10 @@
 <div class="col1"><h2>DEPO/X Tester</h2></div>
 <div class="col2">
 <p class="field switch">
-    <input type="radio" id="radio1" name="field"  checked />
-    <input type="radio" id="radio2" name="field" />
-    <label for="radio1" class="cb-enable selected"><span>Enable</span></label>
-    <label for="radio2" class="cb-disable"><span>Disable</span></label>
+    <input type="radio" id="radio1" name="field"/>
+    <input type="radio" id="radio2" name="field" checked />
+    <label for="radio1" class="cb-enable" onClick='useDefaultSettings()'><span>Default settings</span></label>
+    <label for="radio2" class="cb-disable selected"><span>New settings</span></label>
 </p>
 <script>
 $(document).ready( function(){ 
@@ -35,6 +35,35 @@ $(document).ready( function(){
         $('.checkbox',parent).attr('checked', false);
     });
 });
+</script>
+<script>
+var pathName = location.pathname.replace(/\/C/g,"C").replace(/\//g,"\\").replace(/index.html/g,"Tester.config");
+//document.write(pathName);
+function useDefaultSettings()
+{
+//alert(y);
+$(document).ready(function(){
+	$.ajax({
+		type: "GET",
+		url: pathName,
+		dataType: "config",
+		success: function(xml) {
+			$(xml).find('userSettings').each(function(){
+				var id = $(this).attr('id');
+				var jarPath = $(this).find('TesterJarPath').text().replace(/\\/g,"\\");
+				    console.log('TesterJarPath:				' + jarPath);
+				var gwPath = $(this).find('TesterGWPath').text().replace(/\\/g,"\\");
+				    console.log('TesterGWPath:				' + gwPath);
+				var scenarioPath = $(this).find('TesterScenarioPath').text().replace(/\\/g,"\\");
+				    console.log('TesterScenarioPath:			' + scenarioPath);
+				//$('<div class="items"></div>').html('<h2 class=\'small\'>'+name+'</h2><pre>'+desc+'</pre>').appendTo('#scenarioDescription');
+			});
+		}
+	});
+});
+};
+
+if ( document.getElementById("radio1").checked == true ) { alert("123123")};
 </script>
 <!--здесь ввод для выбора сценариев -->
 <form method="POST" id="myForm"/>
