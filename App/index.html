@@ -6,6 +6,7 @@
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/prettyFile.js"></script>
 <script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/si.files.js"></script>
 </head>
 <body>
 <div class="header">
@@ -13,19 +14,62 @@
 <div class="col-wrap2">
 <div class="col1"><h2>DEPO/X Tester</h2></div>
 <div class="col2">
-
+<p class="field switch">
+    <input type="radio" id="radio1" name="field"  checked />
+    <input type="radio" id="radio2" name="field" />
+    <label for="radio1" class="cb-enable selected"><span>Enable</span></label>
+    <label for="radio2" class="cb-disable"><span>Disable</span></label>
+</p>
+<script>
+$(document).ready( function(){ 
+    $(".cb-enable").click(function(){
+        var parent = $(this).parents('.switch');
+        $('.cb-disable',parent).removeClass('selected');
+        $(this).addClass('selected');
+        $('.checkbox',parent).attr('checked', true);
+    });
+    $(".cb-disable").click(function(){
+        var parent = $(this).parents('.switch');
+        $('.cb-enable',parent).removeClass('selected');
+        $(this).addClass('selected');
+        $('.checkbox',parent).attr('checked', false);
+    });
+});
+</script>
 <!--здесь ввод для выбора сценариев-->
 <form method="POST" id="myForm"/>
 <!--Выбор Tester.jar-->
-<input type="file" id="testerJar" class='btn btn-info' accept="application/x-jar"/>
+
+<div class="textTT">
+<a href='' class='btn btn-info'>
+<label class="cabinet">Select JAR
+<input type="file" id="testerJar" class="file" accept="application/x-jar"/>
+</label>
+</a>
+</div>
 <input type="hidden" id="testerJarPath"/>
 <!--Выбор TesterGW.xml-->
-<input type="file" id="testerGW" class='btn btn-info' accept="application/xml"/>
+<div class="textTT">
+<a href='' class='btn btn-info'>
+<label class="cabinet">Select GW
+<input type="file" id="testerGW" class='file' accept="application/xml"/>
+</label>
+</a>
+</div>
 <input type="hidden" id="testerGWPath"/>
 <!--Выбор сценариев-->
-<input type="file" id="file" multiple class='btn btn-info' accept="application/xml"/>
+<div class="textTT">
+<a href='' class='btn btn-info'>
+<label class="cabinet">Select Scenario's
+<input type="file" id="file" multiple class='file' accept="application/xml"/>
+</label>
+</a>
+</div>
 <input type="hidden" id="textArea"/>
 </form>
+<script type="text/javascript" language="javascript">
+SI.Files.stylizeAll();
+</script>
 <!--здесь ввод для выбора сценариев-->
 
 <!--здесь вывод select menu-->

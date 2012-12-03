@@ -6,7 +6,41 @@ body {
 
 h1 { color: #FF0066; padding: 0px; margin: 0px;}
 .green {color:#33FF33;}
-.red {color:#FF0000;}
+.red {color: #CCCCCC; background-color: #FF0033}
+.textTT { display: inline-table; float: left; margin: 1px 0 0 10px; }
+
+.cb-enable, .cb-disable, .cb-enable span, .cb-disable span { background: /*url(../img/switch.gif)*/ repeat-x; display: block; float: left; background-color: #EEEEEE; }
+.cb-enable span, .cb-disable span { line-height: 30px; display: block; background-repeat: no-repeat; font-weight: normal; background-color: #EEEEEE; }
+.cb-enable span { background-position: left -90px; padding: 0 10px; background-color: #EEEEEE; }
+.cb-disable span { background-position: right -180px;padding: 0 10px; background-color: #EEEEEE; }
+.cb-disable.selected { background-position: 0 -30px; background-color: #EEEEEE; border-left: 1px solid #E1E1E1; cursor: default; }
+.cb-disable.selected span { background-position: right -210px; color: #FFFFFF; background-color: #BD362F;  }
+.cb-enable.selected { background-position: 0 -60px; border-right: 1px solid #E1E1E1; cursor: default;  }
+.cb-enable.selected span { background-position: left -150px; color: #FFFFFF; background-color: #51A351;  }
+.switch label { cursor: pointer; }
+.switch input { display: none; }
+
+.SI-FILES-STYLIZED label.cabinet
+{
+    width: 115px;
+    height: 20px;
+	text-align: center;
+	padding: 0px;
+
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.SI-FILES-STYLIZED label.cabinet input.file
+{
+    position: relative;
+    height: 100%;
+    width: auto;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
 
 .text_container_l {
 width: 50%;
@@ -25,7 +59,7 @@ margin:0 0 0 -100%;
 .text_r {
 float:left;
 }
-.textDescLog {padiing: 10px;}
+.textDescLog {padding: 10px;}
 
 .header {
   margin: 0px 0 10px 0px;

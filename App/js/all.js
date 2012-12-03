@@ -9,8 +9,8 @@ function myfunction()
   };
 
 // замена кнопки input file
-$('#testerJar').prettyfile({ html: "<a href='' class='btn btn-info'>Select Tester.jar</a>" });
-$('#file').prettyfile({ html: "<a href='' class='btn btn-info'>Select all scenario</a>" });
+//$('#testerJar').prettyfile({ html: "<a href='' class='btn btn-info'>Select Tester.jar</a>" });
+//$('#file').prettyfile({ html: "<a href='' class='btn btn-info'>Select all scenario</a>" });
 
 
 // получение пути до Tester.jar
@@ -61,7 +61,8 @@ function mySFunction()
 	var exec = require('child_process').exec, child;
 	child = exec('java -jar ' + TesterJarPath + ' TesterGW.xml ' + Scenario,
 	function (error, stdout, stderr){
-	$('<div class="log"></div>').html('<pre>' + stdout.replace(/(.*\|)/g,"").replace(/tester ConfigFile ScenarioName/gi,"Select scenario first").replace(/<-- Starting scenario:/gi,"Starting scenario: ").replace(/done/gi,"<span class=green>done</span>").replace(/got error:/gi,"<span class=red>got error: </span>") + '</pre>' ).appendTo('#scenarioLog');
+	$('<div class="log"></div>').html('<pre>' + stdout.replace(/(.*\|)/g,"").replace(/tester ConfigFile ScenarioName/gi,"Select scenario first").replace(/<-- Starting scenario:/gi,"Starting scenario: ").replace(/done/gi,"<span class=green>done</span>").replace(/check FAIL:/gi,"<span class=red>check FAIL: </span>").replace(/got error:/gi,"<span class=red>got error: </span>") + '</pre>' ).appendTo('#scenarioLog');
+	console.log('This process is pid ' + process.pid);
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
     if(error !== null){
@@ -96,3 +97,34 @@ $(document).ready(function(){
 	});
 });
 };
+
+
+// читаем Info.log
+/*
+// получение выбранного сценария и вывод его описания
+function infoLogResult()
+{
+$('#infoLog').empty();
+var x=document.getElementById("scenarioSelect").selectedIndex;
+var y=document.getElementsByTagName("option")[x].value; 
+
+//alert(y);
+$(document).ready(function(){
+	$.ajax({
+		type: "GET",
+		url: document.getElementById('testerGWPath').value,
+		dataType: "xml",
+		success: function(xml) {
+			$(xml).find('Scenario').each(function(){
+				var id = $(this).attr('id');
+				var name = $(this).find('Name').text().replace(/\_/g," ");
+				    console.log('Name:					' + name);
+				var desc = $(this).find('Description').text();
+				    console.log('Description: ' + desc);
+				$('<div class="items"></div>').html('<h2 class=\'small\'>'+name+'</h2><pre>'+desc+'</pre>').appendTo('#scenarioDescription');
+			});
+		}
+	});
+});
+};
+*/
