@@ -9,14 +9,16 @@ h1 { color: #FF0066; padding: 0px; margin: 0px;}
 .red {color: #CCCCCC; background-color: #FF0033}
 .textTT { display: inline-table; float: left; margin: 1px 0 0 10px; }
 
-.cb-enable, .cb-disable, .cb-enable span, .cb-disable span {display: block; float: left; background-color: #EEEEEE; }
-.cb-enable span, .cb-disable span { line-height: 30px; display: block; font-weight: normal; background-color: #EEEEEE; }
-.cb-enable span {padding: 0 10px; background-color: #EEEEEE; }
-.cb-disable span {padding: 0 10px; background-color: #EEEEEE; }
-.cb-disable.selected {background-color: #EEEEEE; border-left: 1px solid #E1E1E1; cursor: default; }
-.cb-disable.selected span {color: #FFFFFF; background-color: #BD362F;  }
-.cb-enable.selected {border-right: 1px solid #E1E1E1; cursor: default;  }
-.cb-enable.selected span {color: #FFFFFF; background-color: #51A351;  }
+.cb-enable, .cb-disable, .cb-enable span, .cb-disable span {display: block; float: left; text-align: center; }
+.cb-enable span, .cb-disable span { line-height: 30px; display: block; font-weight: normal;}
+.cb-enable span {color: #51A351; padding: 0 10px; background-color: #EEEEEE; border-right: 1px solid #E1E1E1;}
+.cb-enable.selected {cursor: default;}
+.cb-enable.selected span {color: #FFFFFF; background-color: #51A351; border-right: 1px solid #CCCCCC;}
+
+.cb-disable span {color: #BD362F; padding: 0 10px; background-color: #EEEEEE; border-left: 1px solid #E1E1E1;}
+.cb-disable.selected {cursor: default; }
+.cb-disable.selected span {color: #FFFFFF; background-color: #BD362F; border-left: 1px solid #CCCCCC;}
+
 .switch label { cursor: pointer; }
 .switch input { display: none; }
 

@@ -14,12 +14,15 @@
 <div class="col-wrap2">
 <div class="col1"><h2>DEPO/X Tester</h2></div>
 <div class="col2">
+<div class="textTT">Use default settings</div>
+<div class="textTT">
 <p class="field switch">
     <input type="radio" id="radio1" name="field"/>
     <input type="radio" id="radio2" name="field" checked />
-    <label for="radio1" class="cb-enable" onClick='useDefaultSettings()'><span>Default settings</span></label>
-    <label for="radio2" class="cb-disable selected"><span>New settings</span></label>
+    <label for="radio1" class="cb-enable" onClick='useDefaultSettings()'><span>Yes</span></label>
+    <label for="radio2" class="cb-disable selected"><span>No&nbsp;</span></label>
 </p>
+</div>
 <script>
 $(document).ready( function(){ 
     $(".cb-enable").click(function(){
