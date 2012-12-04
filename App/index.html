@@ -41,6 +41,8 @@ $(document).ready( function(){
 </script>
 <script>
 // загрузка по дефолту
+var assa = location.pathname;
+document.write(assa);
 var pathName = location.pathname.replace(/\/C/g,"C").replace(/\//g,"\\").replace(/index.html/g,"Tester.config");
 //document.write(pathName);
 function useDefaultSettings()
@@ -68,6 +70,25 @@ $(document).ready(function(){
 };
 
 if ( document.getElementById("radio1").checked == true ) { alert("123123")};
+</script>
+<script>
+var fs = require("fs"),
+    sys = require("sys");
+var testFile = location.pathname.replace(/\/C/g,"C").replace(/index.html/g,"test.txt");
+fs.open( testFile, "r+", 0644, function(err, file_handle) {
+if (!err) {
+    alert("Read" + testFile)
+	fs.write(file_handle, "Copyrighted by Me", null, 'ascii', function(err, written) {
+        if (!err) {
+            // Всё прошло хорошо
+        } else {
+            // Произошла ошибка при записи
+        }
+    });
+} else {
+    alert("Not read")
+}
+});
 </script>
 <!--здесь ввод для выбора сценариев -->
 <form method="POST" id="myForm"/>
