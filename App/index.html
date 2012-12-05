@@ -183,6 +183,24 @@ SI.Files.stylizeAll();
 <!--здесь вывод описания сценария-->
 </div>
 <div class="text_r">
+
+<script>
+var terminal = require('child_process').spawn('bash');
+
+terminal.stdout.on('data', function (data) {
+    console.log('stdout: ' + data);
+});
+
+terminal.on('exit', function (code) {
+        console.log('child process exited with code ' + code);
+});
+
+setTimeout(function() {
+    terminal.stdin.write('echo %PATH%\n');
+}, 2000);
+</script>
+
+
 <!--здесь вывод лога работы сценария-->
 <div id="scenarioLog" class="textDescLog"></div>
 <!--здесь вывод лога работы сценария-->

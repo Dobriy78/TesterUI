@@ -1,0 +1,24 @@
+/* Style for Usual tabs */
+.usual {
+  margin:15px 0 5px 0;;
+}
+.usual li { list-style:none; float:left; }
+.usual ul a {
+  display:block;
+  text-decoration:none!important;
+  margin-right: 5px;
+}
+.usual ul a:hover {
+
+  }
+.usual ul a.selected {
+
+  cursor:default;
+  }
+.usual div {
+  padding:10px;
+  clear:left;
+}
+.usual div a { }
+
+
