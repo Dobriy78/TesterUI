@@ -18,26 +18,38 @@
 </div>
 </div>
 <div class="header">
-<div class="textTTT">Use default settings</div>
+<div class="textTTT">Use default settings:</div>
 <div class="textTT">
 <p class="field switch">
     <input type="radio" id="radio1" name="field"/>
     <input type="radio" id="radio2" name="field" checked />
-    <label for="radio1" class="cb-enable"><span>Yes</span></label>
-    <label for="radio2" class="cb-disable selected"><span>No&nbsp;</span></label>
+    <label for="radio1" id="lr1" class="cb-enable"><span>Yes</span></label>
+    <label for="radio2" id="lr2" class="cb-disable selected"><span>No&nbsp;</span></label>
 </p>
 </div>
 <script>
 $(document).ready( function(){ 
-    $(".cb-enable").click(function(){
+    $("#lr1").click(function(){
         var parent = $(this).parents('.switch');
-        $('.cb-disable',parent).removeClass('selected');
+        $('#lr2',parent).removeClass('selected');
         $(this).addClass('selected');
         $('.checkbox',parent).attr('checked', true);
     });
-    $(".cb-disable").click(function(){
+    $("#lr2").click(function(){
         var parent = $(this).parents('.switch');
-        $('.cb-enable',parent).removeClass('selected');
+        $('#lr1',parent).removeClass('selected');
+        $(this).addClass('selected');
+        $('.checkbox',parent).attr('checked', false);
+    });
+    $("#lr3").click(function(){
+        var parent = $(this).parents('.switch');
+        $('#lr4',parent).removeClass('selected');
+        $(this).addClass('selected');
+        $('.checkbox',parent).attr('checked', true);
+    });
+    $("#lr4").click(function(){
+        var parent = $(this).parents('.switch');
+        $('#lr3',parent).removeClass('selected');
         $(this).addClass('selected');
         $('.checkbox',parent).attr('checked', false);
     });
@@ -46,9 +58,11 @@ $(document).ready( function(){
 <script>
 $('#radio2').click(function(){
 $(".textTTH").removeClass("hidden");
+$(".textTTTH").removeClass("hidden");
 });
 $('#radio1').click(function(){
 $(".textTTH").addClass("hidden");
+$(".textTTTH").addClass("hidden");
 // загрузка по дефолту
 //var assa = location.pathname;
 //document.write(assa);
@@ -102,24 +116,33 @@ if (!err) {
 <!--здесь ввод для выбора сценариев -->
 <form method="POST" id="myForm"/>
 <!--Выбор Tester.jar-->
-
-<div class="textTTH hidden">
+<div class="textTTTH">Select:</div>
+<div class="textTTH">
 <a href='' class='btn btn-info'>
-<label class="cabinet">Select JAR
+<label class="cabinet">Tester.jar
 <input type="file" id="testerJar" class="file" accept="application/x-jar"/>
 </label>
 </a>
 </div>
 <input type="hidden" id="testerJarPath"/>
 <!--Выбор TesterGW.xml-->
-<div class="textTTH hidden">
+<div class="textTTH">
 <a href='' class='btn btn-info'>
-<label class="cabinet">Select GW
+<label class="cabinet">TesterGW.xml
 <input type="file" id="testerGW" class='file' accept="application/xml"/>
 </label>
 </a>
 </div>
 <input type="hidden" id="testerGWPath"/>
+<div class="textTTT">Use batch:</div>
+<div class="textTT">
+<p class="field switch">
+    <input type="radio" id="radio3" name="field"/>
+    <input type="radio" id="radio4" name="field" checked />
+    <label for="radio3" id="lr3" class="cb-enable"><span>Yes</span></label>
+    <label for="radio4" id="lr4" class="cb-disable selected"><span>No&nbsp;</span></label>
+</p>
+</div>
 <!--Выбор сценариев-->
 <div class="textTT">
 <a href='' class='btn btn-info'>

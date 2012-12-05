@@ -11,6 +11,7 @@ h1 { color: #FF0066; padding: 0px; margin: 0px;}
 .textTT { display: inline-table; float: left; margin: 1px 0 0 10px; }
 .textTTH { display: inline-table; float: left; margin: 1px 0 0 10px; }
 .textTTT { display: inline-table; float: left; margin: 1px 0 0 10px; padding: 5px 0 5px 0; text-align: center; }
+.textTTTH { display: inline-table; float: left; margin: 1px 0 0 10px; padding: 5px 0 5px 0; text-align: center; }
 .hidden {display: none;}
 
 .cb-enable, .cb-disable, .cb-enable span, .cb-disable span {display: block; float: left; text-align: center; }
