@@ -2,12 +2,16 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #FFFFFF;
 	padding: 5px; 
+	margin: 0px;
 }
 
 h1 { color: #FF0066; padding: 0px; margin: 0px;}
 .green {color:#33FF33;}
 .red {color: #CCCCCC; background-color: #FF0033}
 .textTT { display: inline-table; float: left; margin: 1px 0 0 10px; }
+.textTTH { display: inline-table; float: left; margin: 1px 0 0 10px; }
+.textTTT { display: inline-table; float: left; margin: 1px 0 0 10px; padding: 5px 0 5px 0; text-align: center; }
+.hidden {display: none;}
 
 .cb-enable, .cb-disable, .cb-enable span, .cb-disable span {display: block; float: left; text-align: center; }
 .cb-enable span, .cb-disable span { line-height: 30px; display: block; font-weight: normal;}
@@ -65,9 +69,12 @@ float:left;
 
 .header {
   margin: 0px 0 10px 0px;
-  padding: 10px 0 10px 0;
+  padding: 4px 0 1px 0;
   border-bottom: 1px #CCCCCC dashed;
+  border-top: 1px #CCCCCC dashed;
   color: #666699;
+  display: table;
+  width: 100%;
 }
 .col-wrap1 {
 width:30%;

@@ -92,7 +92,7 @@ $(document).ready(function(){
 				    console.log('Name:					' + name);
 				var desc = $(this).find('Description').text();
 				    console.log('Description: ' + desc);
-				$('<div class="items"></div>').html('<h2 class=\'small\'>'+name+'</h2><pre>'+desc+'</pre>').appendTo('#scenarioDescription');
+				$('<div class="items"></div>').html('<h3 class=\'small\'>'+name+'</h3><pre>'+desc+'</pre>').appendTo('#scenarioDescription');
 			});
 		}
 	});

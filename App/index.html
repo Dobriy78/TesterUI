@@ -9,17 +9,21 @@
 <script type="text/javascript" src="js/si.files.js"></script>
 </head>
 <body>
-<div class="header">
 <div class="col-wrap1">
 <div class="col-wrap2">
-<div class="col1"><h2>DEPO/X Tester</h2></div>
-<div class="col2">
-<div class="textTT">Use default settings</div>
+<div class="col1"><h2>DEPO/X Tester</h2>
+</div>
+<div class="col2"><!--Здесь меню возможно--></div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="header">
+<div class="textTTT">Use default settings</div>
 <div class="textTT">
 <p class="field switch">
     <input type="radio" id="radio1" name="field"/>
     <input type="radio" id="radio2" name="field" checked />
-    <label for="radio1" class="cb-enable" onClick='useDefaultSettings()'><span>Yes</span></label>
+    <label for="radio1" class="cb-enable"><span>Yes</span></label>
     <label for="radio2" class="cb-disable selected"><span>No&nbsp;</span></label>
 </p>
 </div>
@@ -40,13 +44,18 @@ $(document).ready( function(){
 });
 </script>
 <script>
+$('#radio2').click(function(){
+$(".textTTH").removeClass("hidden");
+});
+$('#radio1').click(function(){
+$(".textTTH").addClass("hidden");
 // загрузка по дефолту
-var assa = location.pathname;
-document.write(assa);
+//var assa = location.pathname;
+//document.write(assa);
 var pathName = location.pathname.replace(/\/C/g,"C").replace(/\//g,"\\").replace(/index.html/g,"Tester.config");
 //document.write(pathName);
-function useDefaultSettings()
-{
+//function useDefaultSettings()
+//{
 //alert(y);
 $(document).ready(function(){
 	$.ajax({
@@ -57,21 +66,21 @@ $(document).ready(function(){
 			$(xml).find('userSettings').each(function(){
 				var id = $(this).attr('id');
 				var jarPath = $(this).find('TesterJarPath').text().replace(/\\/g,"\\");
-				    console.log('TesterJarPath:				' + jarPath);
+				    console.log('TesterJarPath:			' + jarPath);
 				var gwPath = $(this).find('TesterGWPath').text().replace(/\\/g,"\\");
-				    console.log('TesterGWPath:				' + gwPath);
+				    console.log('TesterGWPath:			' + gwPath);
 				var scenarioPath = $(this).find('TesterScenarioPath').text().replace(/\\/g,"\\");
-				    console.log('TesterScenarioPath:			' + scenarioPath);
+				    console.log('TesterScenarioPath:		' + scenarioPath);
 				//$('<div class="items"></div>').html('<h2 class=\'small\'>'+name+'</h2><pre>'+desc+'</pre>').appendTo('#scenarioDescription');
 			});
 		}
 	});
 });
-};
+});
 
-if ( document.getElementById("radio1").checked == true ) { alert("123123")};
+//if ( document.getElementById("radio1").checked == true ) { alert("123123")};
 </script>
-<script>
+<!--script>
 var fs = require("fs"),
     sys = require("sys");
 var testFile = location.pathname.replace(/\/C/g,"C").replace(/index.html/g,"test.txt");
@@ -89,12 +98,12 @@ if (!err) {
     alert("Not read")
 }
 });
-</script>
+</script-->
 <!--здесь ввод для выбора сценариев -->
 <form method="POST" id="myForm"/>
 <!--Выбор Tester.jar-->
 
-<div class="textTT">
+<div class="textTTH hidden">
 <a href='' class='btn btn-info'>
 <label class="cabinet">Select JAR
 <input type="file" id="testerJar" class="file" accept="application/x-jar"/>
@@ -103,7 +112,7 @@ if (!err) {
 </div>
 <input type="hidden" id="testerJarPath"/>
 <!--Выбор TesterGW.xml-->
-<div class="textTT">
+<div class="textTTH hidden">
 <a href='' class='btn btn-info'>
 <label class="cabinet">Select GW
 <input type="file" id="testerGW" class='file' accept="application/xml"/>
@@ -126,21 +135,19 @@ SI.Files.stylizeAll();
 </script>
 <!--здесь ввод для выбора сценариев-->
 
-<!--здесь вывод select menu-->
-<div id="menu"></div>
-<!--здесь вывод select menu-->
+
 </div>
-<div class="clear"></div>
-</div>
-</div>
-</div>
+
 
 <div class="main">
 <div class="text_container_l">
 <div class="text_container_r">
 <div class="text_l">
+<!--здесь вывод select menu-->
+<div id="menu"></div>
+<!--здесь вывод select menu-->
 <!--здесь вывод описания сценария-->
-<div id="scenarioDescription" class="textDescLog" ></div>
+<div id="scenarioDescription" class="textDescLog"></div>
 <!--здесь вывод описания сценария-->
 </div>
 <div class="text_r">
