@@ -3,17 +3,24 @@
 <head>
 <title>DEPO/X Tester</title>
 <link href="styles/main.css" rel="stylesheet" type="text/css" media="all" />
+<link href="styles/tab.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/prettyFile.js"></script>
 <script type="text/javascript" src="js/all.js"></script>
 <script type="text/javascript" src="js/si.files.js"></script>
+<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
 </head>
 <body>
 <div class="col-wrap1">
 <div class="col-wrap2">
 <div class="col1"><h2>DEPO/X Tester</h2>
 </div>
-<div class="col2"><!--Здесь меню возможно--></div>
+<div class="col2"><!--Здесь меню возможно-->
+<div class="idTab">
+            <div class="textTT"><a class="btn btn-info" href="#jquery">F.a.q</a></div>
+            <div class="textTT"><a class="btn btn-info" href="#official">Editor</a></div>
+      </div>
+</div>
 <div class="clear"></div>
 </div>
 </div>
@@ -166,6 +173,8 @@ SI.Files.stylizeAll();
 <div class="text_container_l">
 <div class="text_container_r">
 <div class="text_l">
+          <div id="jquery">If you haven't checked out <a href="http://www.jquery.com">jQuery</a> yet, I highly recommend it.</div>
+          <div id="official">idTabs is only a simple implimentation of tabs. If you want advanced features like ajax tabs, then I highly recommend the official <a href="http://www.stilbuero.de/jquery/tabs_3/">Tabs 3 plugin</a>.</div>
 <!--здесь вывод select menu-->
 <div id="menu"></div>
 <!--здесь вывод select menu-->
