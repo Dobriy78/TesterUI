@@ -52,7 +52,7 @@ $('#file').change(function()
 	
 });
 
-// запуч сценария
+// запуск сценария
 function mySFunction()
 {
 	$('#scenarioLog').empty();

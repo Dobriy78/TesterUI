@@ -183,9 +183,11 @@ SI.Files.stylizeAll();
 <!--здесь вывод описания сценария-->
 </div>
 <div class="text_r">
+<button type="button" id="qq">Pause</button>
 
 <script>
-var terminal = require('child_process').spawn('bash');
+$('#qq').click(function(){console.log('aaa');});
+var terminal = require('child_process').spawn('cmd');
 
 terminal.stdout.on('data', function (data) {
     console.log('stdout: ' + data);
@@ -196,8 +198,13 @@ terminal.on('exit', function (code) {
 });
 
 setTimeout(function() {
-    terminal.stdin.write('echo %PATH%\n');
-}, 2000);
+    terminal.stdin.write('echo 123\n');
+    terminal.stdin.write('pause\n');
+	var anyKey = data.replace(/Press any key to continue . . ./gi,"Press any key to continue . . .");
+	//$('#qq').click(function(){console.log('aaa'); terminal.stdin.write('\n'); }); 
+    terminal.stdin.write('echo 321\n');
+}, 100);
+
 </script>
 
 
