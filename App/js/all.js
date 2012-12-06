@@ -59,6 +59,26 @@ function mySFunction()
 	var x=document.getElementById("scenarioSelect").selectedIndex;
 	var Scenario = document.getElementsByTagName("option")[x].value.replace(/(\w+[:\/]+)+/,"").replace(/\.xml/g,""); 
 	var TesterJarPath = $('#testerJarPath').val();
+	var spawn = require('child_process').spawn,
+    scenarioRun = spawn('java', ['-jar', TesterJarPath, 'TesterGW.xml', Scenario]);
+	scenarioRun.stdout.on('data', function (data) {
+	console.log('stdout: ' + data);
+	//alert(data);
+	
+$('<div class="log"></div>').html('<pre>' + data + '</pre>' ).appendTo('#scenarioLog');
+
+});
+$('#qq').click(function(){
+	scenarioRun.stdin.write('a\n');
+});
+	scenarioRun.stderr.on('data', function (data) {
+	console.log('stderr: ' + data);
+});
+
+	scenarioRun.on('exit', function (code) {
+	console.log('child process exited with code ' + code);
+});
+	/*
 	var exec = require('child_process').exec, child;
 	child = exec('java -jar ' + TesterJarPath + ' TesterGW.xml ' + Scenario,
 	function (error, stdout, stderr){
@@ -69,7 +89,7 @@ function mySFunction()
     if(error !== null){
 	console.log('exec error: ' + error);
     }
-});
+});*/
 };
 
 // получение выбранного сценария и вывод его описания
