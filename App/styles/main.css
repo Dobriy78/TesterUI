@@ -1,13 +1,26 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	background-color: #FFFFFF;
-	padding: 5px; 
+	background-color: #fbfbfb;
+	padding: 0px; 
 	margin: 0px;
+	/*border: groove 2px #00FF33;*/
 }
+.n-header {border-bottom: solid 1px #ECECEC; padding: 10px; color: #663333;}
+.n-main-menu { background-color: #FBFBFB; padding: 7px 10px 0px 0px; border-bottom: solid 1px #ECECEC; margin-bottom: 15px; display: inline-table; width: 100%; clear: left;}
+a.menu {color:#0073a1; margin: 10px 25px 0px 0px; padding: 7px 10px 10px 0px; font-size: 1.2em; text-decoration:none!important}
+a.menu:hover {color:#009cdc; padding: 15px 10px 10px 0px; }
+a.menu.selected {color:#009cdc; cursor:default; background-color: #ECECEC; margin: 10px 25px 0px 0px; padding: 7px 10px 10px 0px; }
+h1 {padding: 0px; margin: 0px;}
+.n-header h2 {padding: 0px; margin: 0px; font-size: 1.8em; font-weight: 400}
+/*.header-dark{background:#fbfbfb;-moz-box-shadow:inset 0 0 16px 0 rgba(0,0,0,.1);-webkit-box-shadow:inset 0 0 16px 0 rgba(0,0,0,.1);box-shadow:inset 0 0 16px 0 rgba(0,0,0,.1);min-width:540px}*/
 
-h1 { color: #FF0066; padding: 0px; margin: 0px;}
+
+.n-main-menu ul li {padding: 0px; margin: 0px; list-style:none; float:left; }
+/*.n-main-menu div {clear:left;}*/
+.logo {font-size: 1.6em; margin-right: 25px; padding: 10px 10px 15px 0px;}
+
 .green {color:#33FF33;}
-.red {color: #CCCCCC; background-color: #FF0033}
+.red {color: #FF0033}
 .textTT { display: inline-table; float: left; margin: 1px 0 0 10px; }
 .textTTH { display: inline-table; float: left; margin: 1px 0 0 10px; }
 .textTTT { display: inline-table; float: left; margin: 1px 0 0 10px; padding: 5px 0 5px 0; text-align: center; }
@@ -71,8 +84,6 @@ float:left;
 .header {
   margin: 0px 0 10px 0px;
   padding: 4px 0 1px 0;
-  border-bottom: 1px #CCCCCC dashed;
-  border-top: 1px #CCCCCC dashed;
   color: #666699;
   display: table;
   width: 100%;
@@ -1564,7 +1575,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: white;
+
 }
 a {
   color: #0072c6;

@@ -32,6 +32,12 @@ $('#testerGW').change(function()
 	console.log('Starting directory:		' + process.cwd());
 	try { process.chdir(TesterGWPath); console.log('New directory:			' + process.cwd());	}
 	catch (err) { console.log('chdir: ' + err);	}
+	
+	var fs = require('fs');
+	fs.unlinkSync( TesterGWPath + '/Tester_ALL.log')
+	console.log('successfully deleted Tester_All.log');
+	fs.unlinkSync( TesterGWPath + '/Tester_INFO.log')
+	console.log('successfully deleted Tester_INFO.log');
 });
 
 // получение из формы списка файлов и создание выпадающего меню
@@ -47,7 +53,7 @@ $('#file').change(function()
 		{
 			$("<option value=" +filess[i]+ ">" + filess[i].replace(/(\w+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"") + "</option>").appendTo('#scenarioSelect');
 		};
-	$("</select></div><div class='textTT'><input name='tt' type='button' id='submit' onclick='mySFunction()' class='btn btn-info' value='Run scenario'/></div></form>").appendTo('#menu');
+	$("</select></div><div class='textTT hidden'><input name='runScenario' type='button' id='submit' onclick='mySFunction()' class='btn btn-info' value='Run scenario'/></div></form>").appendTo('#menu');
 	
 	
 });
@@ -65,7 +71,7 @@ function mySFunction()
 	console.log('stdout: ' + data);
 	//alert(data);
 	
-$('<div class="log"></div>').html('<pre>' + data + '</pre>' ).appendTo('#scenarioLog');
+$('<div class="log"></div>').html('' + data.toString().replace(/(.*\|)/g,"").replace(/tester ConfigFile ScenarioName/gi,"Select scenario first").replace(/<-- Starting scenario:/gi,"Starting scenario: ").replace(/done/gi,"<span class=green>DONE</span>").replace(/check FAIL:/gi,"<span class=red>check FAIL: </span>").replace(/got error:/gi,"<span class=red>ERROR: </span>") + '').appendTo('#scenarioLog');
 
 });
 $('#qq').click(function(){
@@ -78,24 +84,13 @@ $('#qq').click(function(){
 	scenarioRun.on('exit', function (code) {
 	console.log('child process exited with code ' + code);
 });
-	/*
-	var exec = require('child_process').exec, child;
-	child = exec('java -jar ' + TesterJarPath + ' TesterGW.xml ' + Scenario,
-	function (error, stdout, stderr){
-	$('<div class="log"></div>').html('<pre>' + stdout.replace(/(.*\|)/g,"").replace(/tester ConfigFile ScenarioName/gi,"Select scenario first").replace(/<-- Starting scenario:/gi,"Starting scenario: ").replace(/done/gi,"<span class=green>done</span>").replace(/check FAIL:/gi,"<span class=red>check FAIL: </span>").replace(/got error:/gi,"<span class=red>got error: </span>") + '</pre>' ).appendTo('#scenarioLog');
-	console.log('This process is pid ' + process.pid);
-    console.log('stdout: ' + stdout);
-    console.log('stderr: ' + stderr);
-    if(error !== null){
-	console.log('exec error: ' + error);
-    }
-});*/
 };
 
 // получение выбранного сценария и вывод его описания
 function displayResult()
 {
 $('#scenarioDescription').empty();
+$(".textTT").removeClass("hidden");
 var x=document.getElementById("scenarioSelect").selectedIndex;
 var y=document.getElementsByTagName("option")[x].value; 
 
@@ -112,7 +107,7 @@ $(document).ready(function(){
 				    console.log('Name:					' + name);
 				var desc = $(this).find('Description').text();
 				    console.log('Description: ' + desc);
-				$('<div class="items"></div>').html('<h3 class=\'small\'>'+name+'</h3><pre>'+desc+'</pre>').appendTo('#scenarioDescription');
+				$('<div class="items"></div>').html('<h3 class=\'small\'>'+name+'</h3><br/><pre>'+desc+'</pre>').appendTo('#scenarioDescription');
 			});
 		}
 	});
