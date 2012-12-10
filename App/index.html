@@ -14,22 +14,21 @@
 <div class="n-main-menu">
 <ul class="idTabs">
   <li><div class="logo">Depo/X Tester</div></li>
-  <li><a class="menu btn-link" href="#mainPage">Start test</a></li> 
-  <li><a class="menu btn-link" href="#editPage">Edit scenario</a></li> 
-  <li><a class="menu btn-link" href="#aboutPage">About tester</a></li> 
+  <li><a class="menu" href="#mainPage">Tester</a></li> 
+  <li><a class="menu" href="#editPage">Editor</a></li> 
+  <li><a class="menu" href="#aboutPage">F.a.q.</a></li> 
 </ul>
 </div>
-<div id="mainPage">If you haven't checked out ...</div> 
-<div id="editPage">idTabs is only a simple ...</div>
-<div id="aboutPage">aboutPage Tabs is only a simple ...</div>
+<div id="mainPage" class="content">
+<div class="content-name">Tester</div>
 <div class="header header-dark">
-<div class="textTTT">Use default settings:</div>
+<!--<div class="textTTT">Use default settings:</div>-->
 <div class="textTT">
 <p class="field switch">
     <input type="radio" id="radio1" name="field"/>
     <input type="radio" id="radio2" name="field" checked />
-    <label for="radio1" id="lr1" class="cb-enable"><span>Yes</span></label>
-    <label for="radio2" id="lr2" class="cb-disable selected"><span>No&nbsp;</span></label>
+    <label for="radio1" id="lr1" class="cb-enable"><span>Loaded config</span></label>
+    <label for="radio2" id="lr2" class="cb-disable selected"><span>&nbsp;&nbsp;New config&nbsp;&nbsp;</span></label>
 </p>
 </div>
 <script>
@@ -144,8 +143,8 @@ if (!err) {
 <p class="field switch">
     <input type="radio" id="radio3" name="field"/>
     <input type="radio" id="radio4" name="field" checked />
-    <label for="radio3" id="lr3" class="cb-enable"><span>Yes</span></label>
-    <label for="radio4" id="lr4" class="cb-disable selected"><span>No&nbsp;</span></label>
+    <label for="radio3" id="lr3" class="cb-enable"><span>Batch</span></label>
+    <label for="radio4" id="lr4" class="cb-disable selected"><span>Simple</span></label>
 </p>
 </div>
 <!--Выбор сценариев-->
@@ -194,4 +193,7 @@ SI.Files.stylizeAll();
 </div>
 </div>
 <script type="text/javascript" src="js/all.js"></script>
+</div> 
+<div id="editPage" class="content"><div class="content-name">Editor</div></div>
+<div id="aboutPage" class="content"><div class="content-name">F.a.q.</div></div>
 </body>

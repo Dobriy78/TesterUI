@@ -6,7 +6,7 @@ body {
 	/*border: groove 2px #00FF33;*/
 }
 .n-header {border-bottom: solid 1px #ECECEC; padding: 10px; color: #663333;}
-.n-main-menu { background-color: #FBFBFB; padding: 7px 10px 0px 0px; border-bottom: solid 1px #ECECEC; margin-bottom: 15px; display: inline-table; width: 100%; clear: left;}
+.n-main-menu { background-color: #FBFBFB; padding: 7px 10px 0px 0px; border-bottom: solid 1px #ECECEC; margin-bottom: 0px; display: inline-table; width: 100%; clear: left;}
 a.menu {color:#0073a1; margin: 10px 25px 0px 0px; padding: 7px 10px 10px 0px; font-size: 1.2em; text-decoration:none!important}
 a.menu:hover {color:#009cdc; padding: 15px 10px 10px 0px; }
 a.menu.selected {color:#009cdc; cursor:default; background-color: #ECECEC; margin: 10px 25px 0px 0px; padding: 7px 10px 10px 0px; }
@@ -17,8 +17,9 @@ h1 {padding: 0px; margin: 0px;}
 
 .n-main-menu ul li {padding: 0px; margin: 0px; list-style:none; float:left; }
 /*.n-main-menu div {clear:left;}*/
-.logo {font-size: 1.6em; margin-right: 25px; padding: 10px 10px 15px 0px;}
-
+.logo {font-size: 1.6em; margin-right: 25px; padding: 10px 10px 15px 0px; cursor:default; }
+.content {padding: 0px;}
+.content-name { border-bottom: solid 1px #ECECEC; padding: 10px 15px; background-color: #FFFFFF; font-size: 1.2em; color: #11BBCC;}
 .green {color:#33FF33;}
 .red {color: #FF0033}
 .textTT { display: inline-table; float: left; margin: 1px 0 0 10px; }
