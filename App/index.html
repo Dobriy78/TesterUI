@@ -12,23 +12,27 @@
 </head>
 <body>
 <div class="n-main-menu">
-<ul class="idTabs">
+<div class="idTabs">
+  <ul>
   <li><div class="logo">Depo/X Tester</div></li>
-  <li><a class="menu" href="#mainPage">Tester</a></li> 
-  <li><a class="menu" href="#editPage">Editor</a></li> 
-  <li><a class="menu" href="#aboutPage">F.a.q.</a></li> 
-</ul>
+  <li><div class="h-text"><a class="menu" href="#mainPage">Tester</a></div></li> 
+  <li><div class="h-text"><a class="menu" href="#editPage">Editor</a></div></li> 
+  <li><div class="h-text"><a class="menu" href="#aboutPage">F.a.q.</a></div></li>
+  </ul>
 </div>
+<div class="config"><div class="h-text"><a class="menu" href="#mainPage">Config</a></div></div>
+</div>
+
 <div id="mainPage" class="content">
 <div class="content-name">Tester</div>
 <div class="header header-dark">
-<!--<div class="textTTT">Use default settings:</div>-->
+<div class="textTTT">Use default settings:</div>
 <div class="textTT">
 <p class="field switch">
     <input type="radio" id="radio1" name="field"/>
     <input type="radio" id="radio2" name="field" checked />
-    <label for="radio1" id="lr1" class="cb-enable"><span>Loaded config</span></label>
-    <label for="radio2" id="lr2" class="cb-disable selected"><span>&nbsp;&nbsp;New config&nbsp;&nbsp;</span></label>
+    <label for="radio1" id="lr1" class="cb-enable"><span>Yes</span></label>
+    <label for="radio2" id="lr2" class="cb-disable selected"><span>No&nbsp;</span></label>
 </p>
 </div>
 <script>
@@ -143,8 +147,8 @@ if (!err) {
 <p class="field switch">
     <input type="radio" id="radio3" name="field"/>
     <input type="radio" id="radio4" name="field" checked />
-    <label for="radio3" id="lr3" class="cb-enable"><span>Batch</span></label>
-    <label for="radio4" id="lr4" class="cb-disable selected"><span>Simple</span></label>
+    <label for="radio3" id="lr3" class="cb-enable"><span>Yes</span></label>
+    <label for="radio4" id="lr4" class="cb-disable selected"><span>No&nbsp;</span></label>
 </p>
 </div>
 <!--Выбор сценариев-->
@@ -174,7 +178,9 @@ SI.Files.stylizeAll();
 <div id="menu"></div>
 <!--здесь вывод select menu-->
 <!--здесь вывод описания сценария-->
+<div class="description">
 <div id="scenarioDescription" class="textDescLog"></div>
+</div>
 <!--здесь вывод описания сценария-->
 </div>
 <div class="text_r">
