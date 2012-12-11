@@ -20,12 +20,9 @@
   <li><div class="h-text"><a class="menu" href="#aboutPage">F.a.q.</a></div></li>
   </ul>
 </div>
-<div class="config"><div class="h-text"><a class="menu" href="#mainPage">Config</a></div></div>
+<div class="config"><div class="h-text"><a id="config" class="menu" href="#config">Config</a></div></div>
 </div>
-
-<div id="mainPage" class="content">
-<div class="content-name">Tester</div>
-<div class="header header-dark">
+<div id="configBox">
 <div class="textTTT">Use default settings:</div>
 <div class="textTT">
 <p class="field switch">
@@ -35,92 +32,6 @@
     <label for="radio2" id="lr2" class="cb-disable selected"><span>No&nbsp;</span></label>
 </p>
 </div>
-<script>
-$(document).ready( function(){ 
-    $("#lr1").click(function(){
-        var parent = $(this).parents('.switch');
-        $('#lr2',parent).removeClass('selected');
-        $(this).addClass('selected');
-        $('.checkbox',parent).attr('checked', true);
-    });
-    $("#lr2").click(function(){
-        var parent = $(this).parents('.switch');
-        $('#lr1',parent).removeClass('selected');
-        $(this).addClass('selected');
-        $('.checkbox',parent).attr('checked', false);
-    });
-    $("#lr3").click(function(){
-        var parent = $(this).parents('.switch');
-        $('#lr4',parent).removeClass('selected');
-        $(this).addClass('selected');
-        $('.checkbox',parent).attr('checked', true);
-    });
-    $("#lr4").click(function(){
-        var parent = $(this).parents('.switch');
-        $('#lr3',parent).removeClass('selected');
-        $(this).addClass('selected');
-        $('.checkbox',parent).attr('checked', false);
-    });
-});
-</script>
-<script>
-$('#radio2').click(function(){
-$(".textTTH").removeClass("hidden");
-$(".textTTTH").removeClass("hidden");
-});
-$('#radio1').click(function(){
-$(".textTTH").addClass("hidden");
-$(".textTTTH").addClass("hidden");
-// загрузка по дефолту
-//var assa = location.pathname;
-//document.write(assa);
-var pathName = location.pathname.replace(/\/C/g,"C").replace(/\//g,"\\").replace(/index.html/g,"Tester.config");
-//document.write(pathName);
-//function useDefaultSettings()
-//{
-//alert(y);
-$(document).ready(function(){
-	$.ajax({
-		type: "GET",
-		url: pathName,
-		dataType: "config",
-		success: function(xml) {
-			$(xml).find('userSettings').each(function(){
-				var id = $(this).attr('id');
-				var jarPath = $(this).find('TesterJarPath').text().replace(/\\/g,"\\");
-				    console.log('TesterJarPath:			' + jarPath);
-				var gwPath = $(this).find('TesterGWPath').text().replace(/\\/g,"\\");
-				    console.log('TesterGWPath:			' + gwPath);
-				var scenarioPath = $(this).find('TesterScenarioPath').text().replace(/\\/g,"\\");
-				    console.log('TesterScenarioPath:		' + scenarioPath);
-				//$('<div class="items"></div>').html('<h2 class=\'small\'>'+name+'</h2><pre>'+desc+'</pre>').appendTo('#scenarioDescription');
-			});
-		}
-	});
-});
-});
-
-//if ( document.getElementById("radio1").checked == true ) { alert("123123")};
-</script>
-<!--script>
-var fs = require("fs"),
-    sys = require("sys");
-var testFile = location.pathname.replace(/\/C/g,"C").replace(/index.html/g,"test.txt");
-fs.open( testFile, "r+", 0644, function(err, file_handle) {
-if (!err) {
-    alert("Read" + testFile)
-	fs.write(file_handle, "Copyrighted by Me", null, 'ascii', function(err, written) {
-        if (!err) {
-            // Всё прошло хорошо
-        } else {
-            // Произошла ошибка при записи
-        }
-    });
-} else {
-    alert("Not read")
-}
-});
-</script-->
 <!--здесь ввод для выбора сценариев -->
 <form method="POST" id="myForm"/>
 <!--Выбор Tester.jar-->
@@ -166,17 +77,26 @@ SI.Files.stylizeAll();
 </script>
 <!--здесь ввод для выбора сценариев-->
 
-
 </div>
-
-
+<script>
+$(document).ready(function(){
+$("#configBox").hide();
+  $("#config").click(function(){
+    $("#configBox").toggle();
+  });
+});
+</script>
+<div id="mainPage" class="content">
+<div class="content-box"><div class="textTT content-name">Tester</div>
+<!--здесь вывод select menu-->
+<div id="menu"></div>
+<!--здесь вывод select menu-->
+</div>
 <div class="main">
 <div class="text_container_l">
 <div class="text_container_r">
 <div class="text_l">
-<!--здесь вывод select menu-->
-<div id="menu"></div>
-<!--здесь вывод select menu-->
+
 <!--здесь вывод описания сценария-->
 <div class="description">
 <div id="scenarioDescription" class="textDescLog"></div>
@@ -185,10 +105,6 @@ SI.Files.stylizeAll();
 </div>
 <div class="text_r">
 <button type="button" id="qq">Pause</button>
-
-<script>
-
-</script>
 
 
 <!--здесь вывод лога работы сценария-->

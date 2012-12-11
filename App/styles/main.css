@@ -18,10 +18,13 @@ h1 {padding: 0px; margin: 0px;}
 
 .n-main-menu ul, li {padding: 0px; margin: 0px; list-style:none; float:left; }
 /*.n-main-menu div {clear:left;}*/
-.logo {font-size: 1.4em; margin: 7px 20px 8px 10px; padding: 4px 25px 6px 5px; cursor:default; color: #660033; border-right: solid 1px #87CEEB;}
+.logo {font-size: 1.4em; margin: 7px 15px 8px 10px; padding: 4px 25px 6px 5px; cursor:default; color: #660033; border-right: solid 1px #87CEEB;}
 .h-text {margin: 0px 5px 0px 5px; padding: 13px 0px 15px 0px;}
-.content {padding: 0px;}
-.content-name { border-bottom: solid 1px #ECECEC; padding: 10px 15px 10px 17px; background-color: #FFFFFF; font-size: 1.5em; color: #F0517E;}
+#configBox { border-bottom: solid 1px #87CEEB; padding: 10px 0px 5px 0px; background-color: #EEEEEE; display: inline-table; width: 100%; clear: left;}
+.content {padding: 0px; display: inline-table; width: 100%;
+}
+.content-box { border-bottom: solid 1px #ECECEC; padding: 10px 15px 10px 17px; background-color: #FFFFFF;}
+.content-name {font-size: 1.5em; color: #F0517E;}
 .idTabs {float: left;}
 .config {float: right;}
 .description { display: inline-table; width: 100%;}
@@ -94,13 +97,6 @@ float:left;
 }
 .textDescLog {padding: 10px;}
 
-.header {
-  margin: 0px 0 10px 0px;
-  padding: 4px 0 1px 0;
-  color: #666699;
-  display: table;
-  width: 100%;
-}
 .col-wrap1 {
 width:30%;
 }
@@ -126,131 +122,6 @@ font-size:0;
 overflow:hidden; /* ������� ����������� ��� IE */
 }
 
-.header .logo-panel {
-  height: 32px;
-  line-height: 32px;
-  margin-bottom: 32px;
-}
-.header .logo-panel a,
-.header .logo-panel a:hover {
-  height: 32px;
-  line-height: 32px;
-  text-decoration: none;
-  display: inline-block;
-}
-.header .logo-panel img {
-  vertical-align: top;
-  margin-right: 8px;
-  max-width: none;
-}
-.header .logo-panel .site-name {
-  font-size: 24px;
-}
-.header .logo-panel .site-description {
-  color: #999999;
-  display: inline-block;
-  margin-top: 4px;
-  position: absolute;
-  height: 26px;
-  line-height: 26px;
-  margin-left: 12px;
-  border-left: 1px solid #999999;
-  padding-left: 12px;
-}
-.head-banner {
-  color: white;
-  min-height: 200px;
-  padding: 0 0 22px 0;
-  background: url(../img/milk-banner.png) no-repeat #0072c6;
-  background-position: right bottom;
-  margin-bottom: 40px;
-}
-.head-banner .head-banner-content {
-  margin: 0 12px;
-}
-.head-banner .head-banner-content h1 {
-  font-size: 30px;
-}
-.head-banner .head-banner-content .lead a {
-  color: yellow;
-}
-@media (max-width: 768px) {
-  .head-banner {
-    background-image: none;
-  }
-}
-.show-grid {
-  margin-bottom: 8px;
-}
-.show-grid [class*=span] {
-  background-color: #e2e2e2;
-  text-align: center;
-  line-height: 42px;
-}
-.show-grid .show-grid [class*=span] {
-  background-color: #c2c2c2;
-}
-.example-block {
-  padding: 24px;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-left-width: 4px;
-  margin-bottom: 8px;
-}
-pre.example-code {
-  padding: 24px;
-  margin-bottom: 18px;
-  border-left-color: #999999;
-  border-left-width: 4px;
-}
-.responsive-utilities td {
-  text-align: center;
-  line-height: 43px;
-}
-.responsive-utilities td.is-visible {
-  color: #468847;
-  background-color: #dff0d8 !important;
-}
-.responsive-utilities td.is-hidden {
-  color: #999999;
-  background-color: #efefef !important;
-}
-.responsive-utilities-test ul {
-  display: block;
-}
-.responsive-utilities-test li {
-  list-style: none outside none;
-  width: 120px;
-  color: #999999;
-  background-color: #efefef;
-  line-height: 43px;
-  position: relative;
-  text-align: center;
-}
-.responsive-utilities-test span {
-  color: #468847;
-  background-color: #dff0d8;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-ul.the-icons li {
-  display: inline-block;
-  line-height: 36px;
-  width: 220px;
-}
-ul.the-icons li i {
-  margin-left: 8px;
-  margin-right: 8px;
-}
-table [class*=btn-striped] {
-  margin-bottom: 6px;
-}
-table.striped-buttons-example tr th:first-child {
-  width: 90px;
-}
 /*
 
 // Sprite icons path
