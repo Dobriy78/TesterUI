@@ -7,7 +7,7 @@ body {
 	/*border: groove 2px #00FF33;*/
 }
 
-.n-main-menu { background-color: #FBFBFB; padding: 7px 10px 0px 0px; border-bottom: solid 1px #87CEEB; margin-bottom: 0px; display: inline-table; width: 100%; clear: left;}
+.n-main-menu { background-color: #FBFBFB; padding: 7px 10px 3px 0px; margin-bottom: 0px; display: inline-table; width: 100%; clear: left;}
 a.menu {color:#660033; padding: 10px 5px 15px 5px; font-size: 1.05em; text-decoration:none!important}
 a.menu:hover {color:#cccccc; padding: 10px 5px 15px 5px; }
 a.menu.selected {color:#009cdc; cursor:default; padding: 10px 5px 15px 5px; }
@@ -20,11 +20,30 @@ h1 {padding: 0px; margin: 0px;}
 /*.n-main-menu div {clear:left;}*/
 .logo {font-size: 1.4em; margin: 7px 15px 8px 10px; padding: 4px 25px 6px 5px; cursor:default; color: #660033; border-right: solid 1px #87CEEB;}
 .h-text {margin: 0px 5px 0px 5px; padding: 13px 0px 15px 0px;}
-#configBox { border-bottom: solid 1px #87CEEB; padding: 10px 0px 5px 0px; background-color: #EEEEEE; display: inline-table; width: 100%; clear: left;}
-.content {padding: 0px; display: inline-table; width: 100%;
+
+.content {padding: 0px;}
+.content-box {border-top: solid 1px #87CEEB; border-bottom: solid 1px #87CEEB; padding: 5px 15px 5px 17px; background-color: #FFFFFF; margin-bottom: 15px;}
+.content-name {font-size: 1.4em; color: #009cdc;}
+
+.inputForms {padding: 5px 15px 5px 15px; display: inline-table; width: 50%; border-bottom: 1px solid #CCCCCC;}
+
+input[type="checkbox"] {
+    display:none;
 }
-.content-box { border-bottom: solid 1px #ECECEC; padding: 10px 15px 10px 17px; background-color: #FFFFFF;}
-.content-name {font-size: 1.5em; color: #F0517E;}
+input[type="checkbox"] {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+
+	border: 1px solid #87CEEB;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked  {
+    background-color: #00FF33;
+}
+
 .idTabs {float: left;}
 .config {float: right;}
 .description { display: inline-table; width: 100%;}
@@ -35,6 +54,8 @@ h1 {padding: 0px; margin: 0px;}
   white-space: pre;
   white-space: pre-wrap;
 }
+
+
 .green {color:#33FF33;}
 .red {color: #FF0033}
 .textTT { display: inline-table; float: left; margin: 1px 0 0 10px; }

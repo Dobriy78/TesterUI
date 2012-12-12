@@ -14,15 +14,19 @@
 <div class="n-main-menu">
 <div class="idTabs">
   <ul>
-  <li><div class="logo">Depo/X Tester</div></li>
-  <li><div class="h-text"><a class="menu" href="#mainPage">Tester</a></div></li> 
+  <li><div class="logo">GW – Tester</div></li>
+  <li><div class="h-text"><a class="menu" href="#configPage">Configuration</a></div></li> 
+  <li><div class="h-text"><a class="menu" href="#testPage">Tester</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#editPage">Editor</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#aboutPage">F.a.q.</a></div></li>
   </ul>
 </div>
-<div class="config"><div class="h-text"><a id="config" class="menu" href="#config">Config</a></div></div>
 </div>
-<div id="configBox">
+
+<div id="configPage" class="content">
+<div class="content-box"><div class="content-name">Configuration</div>
+</div>
+<div class="inputForms">
 <div class="textTTT">Use default settings:</div>
 <div class="textTT">
 <p class="field switch">
@@ -31,29 +35,36 @@
     <label for="radio1" id="lr1" class="cb-enable"><span>Yes</span></label>
     <label for="radio2" id="lr2" class="cb-disable selected"><span>No&nbsp;</span></label>
 </p>
-</div>
+</div></div>
+
 <!--здесь ввод для выбора сценариев -->
 <form method="POST" id="myForm"/>
+<div class="inputForms">
 <!--Выбор Tester.jar-->
-<div class="textTTTH">Select:</div>
+<div class="textTTTH">Select Tester.jar:</div>
 <div class="textTTH">
 <a href='' class='btn btn-info'>
-<label class="cabinet">Tester.jar
+<label class="cabinet">Select
 <input type="file" id="testerJar" class="file" accept="application/x-jar"/>
 </label>
 </a>
 </div>
 <input type="hidden" id="testerJarPath"/>
+</div>
+<div class="inputForms">
 <!--Выбор TesterGW.xml-->
+<div class="textTTTH">Select TesterGW.xml:</div>
 <div class="textTTH">
 <a href='' class='btn btn-info'>
-<label class="cabinet">TesterGW.xml
+<label class="cabinet">Select
 <input type="file" id="testerGW" class='file' accept="application/xml"/>
 </label>
 </a>
 </div>
 <input type="hidden" id="testerGWPath"/>
-<div class="textTTT">Use batch:</div>
+</div>
+<div class="inputForms">
+<div class="textTTT">Use batch scenarios:</div>
 <div class="textTT">
 <p class="field switch">
     <input type="radio" id="radio3" name="field"/>
@@ -61,6 +72,7 @@
     <label for="radio3" id="lr3" class="cb-enable"><span>Yes</span></label>
     <label for="radio4" id="lr4" class="cb-disable selected"><span>No&nbsp;</span></label>
 </p>
+</div>
 </div>
 <!--Выбор сценариев-->
 <div class="textTT">
@@ -76,22 +88,40 @@
 SI.Files.stylizeAll();
 </script>
 <!--здесь ввод для выбора сценариев-->
+</div>
+
+
+
+
+
+<div id="testPage" class="content">
+<div class="content-box"><div class="content-name">Tester</div></div>
+
+<div class="textTTTH">Default settings Y/N:</div>
+<div class="textTT"><input type="checkbox" id="default" name="defaultSettings"/>
 
 </div>
-<script>
-$(document).ready(function(){
-$("#configBox").hide();
-  $("#config").click(function(){
-    $("#configBox").toggle();
-  });
-});
-</script>
-<div id="mainPage" class="content">
-<div class="content-box"><div class="textTT content-name">Tester</div>
+
+<div class="textTTH">
+<a href='' class='btn btn-info'>
+<label class="cabinet">Select Tester.jar
+<input type="file" id="testerJar" class="file" accept="application/x-jar"/>
+</label>
+</a>
+</div>
+
+<div class="textTTH">
+<a href='' class='btn btn-info'>
+<label class="cabinet">Select TesterGW
+<input type="file" id="testerGW" class='file' accept="application/xml"/>
+</label>
+</a>
+</div>
+
 <!--здесь вывод select menu-->
 <div id="menu"></div>
 <!--здесь вывод select menu-->
-</div>
+
 <div class="main">
 <div class="text_container_l">
 <div class="text_container_r">
@@ -116,6 +146,8 @@ $("#configBox").hide();
 </div>
 <script type="text/javascript" src="js/all.js"></script>
 </div> 
-<div id="editPage" class="content"><div class="content-name">Editor</div></div>
-<div id="aboutPage" class="content"><div class="content-name">F.a.q.</div></div>
+
+
+<div id="editPage" class="content"><div class="content-box"><div class="content-name">Editor</div></div></div>
+<div id="aboutPage" class="content"><div class="content-box"><div class="content-name">F.a.q.</div></div></div>
 </body>
