@@ -95,33 +95,25 @@ SI.Files.stylizeAll();
 
 
 <div id="testPage" class="content">
-<div class="content-box"><div class="content-name">Tester</div></div>
-
-<div class="textTTTH">Default settings Y/N:</div>
-<div class="textTT"><input type="checkbox" id="default" name="defaultSettings"/>
-
+<div class="content-box">
+<ul>
+  <li><div class="h-text">Use default settings:</div></li>
+  <li><div class="h-text"><input type="checkbox" id="default" name="defaultSettings"/></div></li>
+  <li><div class="h-text">Select:</div></li>
+  <li><div class="h-text"><a href='' class='btn btn-info'><label class="cabinet">Tester.jar<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div></li>
+  <li><div class="h-text"><a href='' class='btn btn-info'><label class="cabinet">TesterGW.xml<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></li>
+  <li><div class="h-text"></div></li>  
+  <li><div class="h-text">Use batch:</div></li>
+  <li><div class="h-text"><input type="checkbox" id="default" name="defaultSettings"/></div></li>
+  <li><div class="h-text"><a href='' class='btn btn-info'><label class="cabinet">Select Scenario's<input type="file" id="file" multiple class='file' accept="application/xml"/></label></a></div></li>
+</ul>
 </div>
 
-<div class="textTTH">
-<a href='' class='btn btn-info'>
-<label class="cabinet">Select Tester.jar
-<input type="file" id="testerJar" class="file" accept="application/x-jar"/>
-</label>
-</a>
-</div>
-
-<div class="textTTH">
-<a href='' class='btn btn-info'>
-<label class="cabinet">Select TesterGW
-<input type="file" id="testerGW" class='file' accept="application/xml"/>
-</label>
-</a>
-</div>
 
 <!--здесь вывод select menu-->
 <div id="menu"></div>
 <!--здесь вывод select menu-->
-
+<button type="button" id="qq">Pause</button>
 <div class="main">
 <div class="text_container_l">
 <div class="text_container_r">
@@ -134,7 +126,7 @@ SI.Files.stylizeAll();
 <!--здесь вывод описания сценария-->
 </div>
 <div class="text_r">
-<button type="button" id="qq">Pause</button>
+
 
 
 <!--здесь вывод лога работы сценария-->

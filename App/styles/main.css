@@ -22,7 +22,7 @@ h1 {padding: 0px; margin: 0px;}
 .h-text {margin: 0px 5px 0px 5px; padding: 13px 0px 15px 0px;}
 
 .content {padding: 0px;}
-.content-box {border-top: solid 1px #87CEEB; border-bottom: solid 1px #87CEEB; padding: 5px 15px 5px 17px; background-color: #FFFFFF; margin-bottom: 15px;}
+.content-box {border-top: solid 1px #87CEEB; border-bottom: solid 1px #87CEEB; display: inline-table; width: 100%; clear: left; padding: 5px 5px 5px 5px; background-color: #FFFFFF; margin-bottom: 15px;}
 .content-name {font-size: 1.4em; color: #009cdc;}
 
 .inputForms {padding: 5px 15px 5px 15px; display: inline-table; width: 50%; border-bottom: 1px solid #CCCCCC;}
