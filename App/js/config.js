@@ -1,7 +1,11 @@
+var pPath = "C:\\1 1\\tester.config";
+var fs = require("fs"),
+    sys = require("sys");
+	
 $(document).ready(function(){
 	$.ajax({
 		type: "GET",
-		url: "C:\\TesterUI\\NW\\tester.xml",
+		url: pPath,
 		dataType: "xml",
 		success: function(xml) {
 			$(xml).find('UserSettings').each(function(){
@@ -29,4 +33,23 @@ if ( UseDefault == "N" ) {
 			});
 		}
 	});
+});
+
+var configNew = "<UserSettings>\n<UseDefault>Y</UseDefault>\n<JarPath>C:\\Tester\\Tester.jar</JarPath>\n<GWPath>C:\\Tester\\TesterGW.xml</GWPath>\n<ScenarioPath>C:\\Tester\\Scenarios\\</ScenarioPath>\n</UserSettings>";
+
+fs.open("C:\\1 1\\tester.config", "w", 0644, function(err, file_handle) {
+if (!err) {
+    // Записываем в конец файла readme.txt фразу "Copyrighted by Me"
+    // при открытии в режиме "a" указатель уже в конце файла, и мы передаём null
+    // в качестве позиции
+    fs.write(file_handle, configNew, null, 'utf8', function(err, written) {
+        if (!err) {
+            // Всё прошло хорошо
+        } else {
+            // Произошла ошибка при записи
+        }
+    });
+} else {
+    // Обработка ошибок при открытии
+}
 });
