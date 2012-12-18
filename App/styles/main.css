@@ -65,7 +65,7 @@ input[type="checkbox"]:checked  {
 .hidden {display: none;}
 
 .cb-enable, .cb-disable, .cb-enable span, .cb-disable span {display: block; float: left; text-align: center; }
-.cb-enable span, .cb-disable span { line-height: 30px; display: block; font-weight: normal;}
+.cb-enable span, .cb-disable span { line-height: 28px; display: block; font-weight: normal;}
 .cb-enable span {color: #51A351; padding: 0 10px; background-color: #EEEEEE; border-right: 1px solid #E1E1E1;}
 .cb-enable.selected {cursor: default;}
 .cb-enable.selected span {color: #FFFFFF; background-color: #51A351; border-right: 1px solid #CCCCCC;}

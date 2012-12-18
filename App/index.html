@@ -3,6 +3,7 @@
 <head>
 <title>Depo/X Tester</title>
 <link href="styles/main.css" rel="stylesheet" type="text/css" media="all" />
+<link href="styles/tester.css" rel="stylesheet" type="text/css" media="all" />
 <link href="styles/tab.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
@@ -27,106 +28,39 @@
 <div id="configPage" class="content">
 <div class="content-box"><div class="content-name">Configuration</div>
 </div>
-<div class="inputForms">
-<div class="textTTT">Use default settings:</div>
-<div class="textTT">
-<p class="field switch">
+
+<form method="POST" id="myForm"/>
+<div class="cBox"><div class="cBoxText">Use default configuration:</div><div class="cBoxForm"><p class="field switch">
     <input type="radio" id="radio1" name="field"/>
     <input type="radio" id="radio2" name="field" checked />
     <label for="radio1" id="lr1" class="cb-enable"><span>Yes</span></label>
     <label for="radio2" id="lr2" class="cb-disable selected"><span>No&nbsp;</span></label>
-</p>
-</div></div>
-
-<!--здесь ввод для выбора сценариев -->
-<form method="POST" id="myForm"/>
-<div class="inputForms">
-<!--Выбор Tester.jar-->
-<div class="textTTTH">Select Tester.jar:</div>
-<div class="textTTH">
-<a href='' class='btn btn-info'>
-<label class="cabinet">Select
-<input type="file" id="testerJar" class="file" accept="application/x-jar"/>
-</label>
-</a>
-</div>
-<input type="hidden" id="testerJarPath"/>
-</div>
-<div class="inputForms">
-<!--Выбор TesterGW.xml-->
-<div class="textTTTH">Select TesterGW.xml:</div>
-<div class="textTTH">
-<a href='' class='btn btn-info'>
-<label class="cabinet">Select
-<input type="file" id="testerGW" class='file' accept="application/xml"/>
-</label>
-</a>
-</div>
-<input type="hidden" id="testerGWPath"/>
-</div>
-<div class="inputForms">
-<div class="textTTT">Use batch scenarios:</div>
-<div class="textTT">
-<p class="field switch">
+</p></div></div>
+<div class="cBoxSave"><div class="cBoxText">Select Tester.jar:</div><div class="cBoxForm"><a href='' class='btn btn-info'><label class="cabinet">Select file<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div></div>
+<div class="cBoxSave"><div class="cBoxText">Select TesterGW.xml:</div><div class="cBoxForm"><a href='' class='btn btn-info'><label class="cabinet">Select file<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></div>
+<div class="cBox"><div class="cBoxText">Save configuration as default:</div><div class="cBoxForm"><a href='' class='btn btn-danger'><label class="cabinet">Save config<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></div>
+<div class="cBoxSave"><div class="cBoxText">Use batch:</div><div class="cBoxForm"><p class="field switch">
     <input type="radio" id="radio3" name="field"/>
     <input type="radio" id="radio4" name="field" checked />
     <label for="radio3" id="lr3" class="cb-enable"><span>Yes</span></label>
     <label for="radio4" id="lr4" class="cb-disable selected"><span>No&nbsp;</span></label>
-</p>
-</div>
-</div>
-<!--Выбор сценариев-->
-<div class="textTT">
-<a href='' class='btn btn-info'>
-<label class="cabinet">Select Scenario's
+</p></div></div>
+<div class="cBox"><div class="cBoxText">Select Scenario's:</div><div class="cBoxForm"><a href='' class='btn btn-info'>
+<label class="cabinet">Select file's
 <input type="file" id="file" multiple class='file' accept="application/xml"/>
 </label>
-</a>
-</div>
+</a></div></div>
+<input type="hidden" id="testerJarPath"/>
+<input type="hidden" id="testerGWPath"/>
 <input type="hidden" id="textArea"/>
 </form>
 <script type="text/javascript" language="javascript">
 SI.Files.stylizeAll();
 </script>
-<!--здесь ввод для выбора сценариев-->
-<div>
-<ul>
-  <li><div class="h-text">Use default settings:</div></li>
-  <li><div class="h-text"><input type="checkbox" id="default" name="defaultSettings"/></div></li>
-</ul>
-
-<ul>  
-  <li><div class="h-text">Select:</div></li>
-  <li><div class="h-text"><a href='' class=''><label class="cabinet">Tester.jar<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div></li>
-  <li><div class="h-text"><a href='' class=''><label class="cabinet">TesterGW.xml<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></li>
-  <li><div class="h-text"></div></li> 
-</ul>
-<ul> 
-  <li><div class="h-text">Use batch:</div></li>
-  <li><div class="h-text"><input type="checkbox" id="default" name="defaultSettings"/></div></li>
-  <li><div class="h-text"><a href='' class='btn btn-info'><label class="cabinet">Select Scenario's<input type="file" id="file" multiple class='file' accept="application/xml"/></label></a></div></li>
-</ul>
 </div>
-
-</div>
-
-
-
-
 
 <div id="testPage" class="content">
-<div class="content-box">
-<ul>
-  <li><div class="h-text">Use default settings:</div></li>
-  <li><div class="h-text"><input type="checkbox" id="default" name="defaultSettings"/></div></li>
-  <li><div class="h-text">Select:</div></li>
-  <li><div class="h-text"><a href='' class=''><label class="cabinet">Tester.jar<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div></li>
-  <li><div class="h-text"><a href='' class=''><label class="cabinet">TesterGW.xml<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></li>
-  <li><div class="h-text"></div></li>  
-  <li><div class="h-text">Use batch:</div></li>
-  <li><div class="h-text"><input type="checkbox" id="default" name="defaultSettings"/></div></li>
-  <li><div class="h-text"><a href='' class='btn btn-info'><label class="cabinet">Select Scenario's<input type="file" id="file" multiple class='file' accept="application/xml"/></label></a></div></li>
-</ul>
+<div class="content-box"><div class="content-name">Tester</div>
 </div>
 
 
