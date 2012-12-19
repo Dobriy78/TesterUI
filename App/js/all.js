@@ -48,12 +48,12 @@ $('#file').change(function()
    	document.getElementById('textArea').value = files;
 	var i;
 	var filess = $('#textArea').val().split(/;\s?/);
-	$("<form method='POST' id='mySelect'><div class='textTT'><select id='scenarioSelect' onchange='displayResult()'><option>Select scenario</option>").appendTo('#menu');
+	$("<form method='POST' id='mySelect'><select id='scenarioSelect' onchange='displayResult()'><option>Select scenario</option>").appendTo('#menu');
 	for (i=0;i<filess.length;i++)
 		{
 			$("<option value=" +filess[i]+ ">" + filess[i].replace(/(\w+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"") + "</option>").appendTo('#scenarioSelect');
 		};
-	$("</select></div><div class='textTT hidden'><input name='runScenario' type='button' id='submit' onclick='mySFunction()' class='btn btn-info' value='Run scenario'/></div></form>").appendTo('#menu');
+	$("</select><div class='textTT hidden'><input name='runScenario' type='button' id='submit' onclick='mySFunction()' class='btn btn-info' value='Run scenario'/></div></form>").appendTo('#menu');
 	
 	
 });

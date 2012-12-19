@@ -4,7 +4,7 @@
 <title>Depo/X Tester</title>
 <link href="styles/main.css" rel="stylesheet" type="text/css" media="all" />
 <link href="styles/tester.css" rel="stylesheet" type="text/css" media="all" />
-<link href="styles/tab.css" rel="stylesheet" type="text/css" media="all" />
+ 
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
 <!--script type="text/javascript" src="js/prettyFile.js"></script-->
@@ -13,20 +13,20 @@
 <script type="text/javascript" src="js/config.js"></script>
 </head>
 <body>
-<div class="n-main-menu">
 <div class="idTabs">
+<div class="n-main-menu">
+<div class="config"><div class="h-text"><a class="menu" href="#configPage">Settings</a></div></div>
   <ul>
   <li><div class="logo">GW – Tester</div></li>
-  <li><div class="h-text"><a class="menu" href="#configPage">Configuration</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#testPage">Tester</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#editPage">Editor</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#aboutPage">F.a.q.</a></div></li>
   </ul>
-</div>
-</div>
+
+</div></div>
 
 <div id="configPage" class="content">
-<div class="content-box"><div class="content-name">Configuration</div>
+<div class="content-box"><div class="content-name">Tester settings</div>
 </div>
 
 <form method="POST" id="myForm"/>
@@ -45,14 +45,8 @@
     <label for="radio3" id="lr3" class="cb-enable"><span>Yes</span></label>
     <label for="radio4" id="lr4" class="cb-disable selected"><span>No&nbsp;</span></label>
 </p></div></div>
-<div class="cBox"><div class="cBoxText">Select Scenario's:</div><div class="cBoxForm"><a href='' class='btn btn-info'>
-<label class="cabinet">Select file's
-<input type="file" id="file" multiple class='file' accept="application/xml"/>
-</label>
-</a></div></div>
 <input type="hidden" id="testerJarPath"/>
 <input type="hidden" id="testerGWPath"/>
-<input type="hidden" id="textArea"/>
 </form>
 <script type="text/javascript" language="javascript">
 SI.Files.stylizeAll();
@@ -60,7 +54,15 @@ SI.Files.stylizeAll();
 </div>
 
 <div id="testPage" class="content">
-<div class="content-box"><div class="content-name">Tester</div>
+<div class="content-box">
+<div class="content-name">Tester</div>
+<div class="content-name"><form method="POST" id="myForm2"/><a href='' class='btn btn-info'><label class="cabinet">Select Scenario's:<input type="file" id="file" multiple class='file' accept="application/xml"/>
+</label>
+</a>
+<input type="hidden" id="textArea"/>
+</form>
+</div>
+<div id="menu" class="menuList"></div>
 </div>
 
 
