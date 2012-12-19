@@ -6,6 +6,7 @@
   "window": {
     "icon": "img/test_64.png",
     "frame": true,
+    "always-on-top": true,
     "toolbar": true,
     "fullscreen": false,
     "width": 1024,

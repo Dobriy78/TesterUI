@@ -1,4 +1,4 @@
-body {background-color: #fbfbfb; font-size: 100%; font-family: Arial, Helvetica, sans-serif;}
+
 .top {padding: 5px;}
 .logo {font-size: 1.6em;}
 
@@ -7,9 +7,9 @@ body {background-color: #fbfbfb; font-size: 100%; font-family: Arial, Helvetica,
 .configPageBoxtext {width: auto; float: right; display: inline-table;}
 .configPageBoxsst {width: auto; float: left; display: inline-table;}
 
-.cBox {border-bottom: 1px solid #87CEEB; width: 500px; height: auto; display: table;}
-.cBoxSave {border-bottom: 1px dashed #cccccc; width: 500px; height: auto; display: table;}
-.cBoxText {width: auto; float: left; display: inline-table; padding: 5px; margin: 5px 0px 5px 5px;}
+.cBox {border-bottom: 1px solid #485156; width: 500px; height: auto; display: table;}
+.cBoxSave {border-bottom: 1px dashed #485156; width: 500px; height: auto; display: table;}
+.cBoxText {color: #ECECEC; font-size: 0.9em; width: auto; float: left; display: inline-table; padding: 5px; margin: 7px 0px 5px 5px;}
 .cBoxForm {width: auto; float: right; display: inline-table; padding: 0 5px 0 5px; margin: 5px 5px 5px 5px;}
 .field, .switch {margin: 0px; padding: 0px;}
 

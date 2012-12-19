@@ -1,15 +1,15 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 100%;
-	background-color: #fbfbfb;
-	padding: 0px 7px 0px 7px;  
+	background-color: #222530;
+	padding: 2px;  
 	margin: 0px; 
 	/*border: groove 2px #00FF33;*/
 }
 
-.n-main-menu { background-color: #FBFBFB; padding: 7px 10px 3px 0px; margin-bottom: 0px; display: inline-table; width: 100%; clear: left;}
-a.menu {color:#660033; padding: 10px 5px 15px 5px; font-size: 1.05em; text-decoration:none!important}
-a.menu:hover {color:#cccccc; padding: 10px 5px 15px 5px; }
+.n-main-menu {/* background-color: #22252e;*/ padding: 7px 10px 3px 0px; margin: 0 1% 0 1%; display: inline-table; width: 98%; clear: left; border-bottom: 1px solid #3b4052;}
+a.menu {color:#CCCCCC; padding: 10px 5px 15px 5px; font-size: 1.05em; text-decoration:none!important}
+a.menu:hover {color:#009cdc; padding: 10px 5px 15px 5px; }
 a.menu.selected {color:#009cdc; cursor:default; padding: 10px 5px 15px 5px; }
 h1 {padding: 0px; margin: 0px;}
 .n-header h2 {padding: 0px; margin: 0px; font-size: 1.6em; font-weight: 400}
@@ -18,11 +18,11 @@ h1 {padding: 0px; margin: 0px;}
 
 .n-main-menu ul, li {padding: 0px; margin: 0px; list-style:none; float:left; }
 /*.n-main-menu div {clear:left;}*/
-.logo {font-size: 1.4em; margin: 7px 15px 8px 10px; padding: 4px 25px 6px 5px; cursor:default; color: #660033; border-right: solid 1px #87CEEB;}
+.logo {font-size: 1.4em; margin: 7px 15px 8px 10px; padding: 4px 25px 6px 5px; cursor:default; color: #CCCCCC; border-right: solid 1px #3b4052;}
 .h-text {margin: 0px 5px 0px 5px; padding: 13px 0px 15px 0px;}
 
 .content {padding: 0px;}
-.content-box {border-top: solid 1px #87CEEB; border-bottom: solid 1px #87CEEB; display: inline-table; width: 100%; clear: left; padding: 5px 5px 5px 5px; background-color: #FFFFFF; margin-bottom: 15px;}
+.content-box {display: inline-table; width: 100%; clear: left; padding: 5px 5px 5px 5px; background-color: ; margin-bottom: 15px;}
 .content-name {font-size: 1.4em; color: #009cdc;}
 
 .inputForms {padding: 5px 15px 5px 15px; display: inline-table; width: 50%; border-bottom: 1px solid #CCCCCC;}
