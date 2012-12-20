@@ -6,6 +6,7 @@
 <link href="styles/tester.css" rel="stylesheet" type="text/css" media="all" />
  
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<!--script type="text/javascript" src="js/jquery-1.8.3.min.js"></script-->
 <script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
 <!--script type="text/javascript" src="js/prettyFile.js"></script-->
 <script type="text/javascript" src="js/all.js"></script>
@@ -13,19 +14,27 @@
 <script type="text/javascript" src="js/config.js"></script>
 </head>
 <body>
-<div class="idTabs">
+<script>
+$(document).ready(function(){
+  $("a[href=#configPage]").click(function(){
+    $("#configPage").toggle(500);
+  });
+});
+</script>
 <div class="n-main-menu">
-<div class="config"><div class="h-text"><a class="menu" href="#configPage">Settings</a></div></div>
+<div class="idTabs">
   <ul>
   <li><div class="logo">GW – Tester</div></li>
   <li><div class="h-text"><a class="menu" href="#testPage">Tester</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#editPage">Editor</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#aboutPage">F.a.q.</a></div></li>
   </ul>
+</div>
+<div class="config"><div class="h-text"><a class="menu" href="#configPage" id="#flip">Settings</a></div></div>
 
-</div></div>
+</div>
 
-<div id="configPage" class="content">
+<div id="configPage">
 <div class="content-box"><div class="content-name">Tester settings</div>
 </div>
 

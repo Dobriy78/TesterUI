@@ -1,14 +1,14 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 100%;
-	background-color: #FBFBFB;
+	background-color: #F7F7F7;
 	padding: 0px;  
 	margin: 0px; 
 	color: #22252e;
 	/*border: groove 2px #00FF33;*/
 }
 
-.n-main-menu {padding: 7px 10px 3px 0px; margin: 0; display: inline-table; width: 100%; clear: left;}
+.n-main-menu {background-color: #FFFFFF; padding: 7px 10px 3px 10px; margin: 0; display: inline-table; width: 100%; clear: left;}
 a.menu {color:#22252e; padding: 10px 5px 15px 5px; font-size: 1.08em; text-decoration:none!important}
 a.menu:hover {color:#009cdc; padding: 10px 5px 15px 5px; }
 a.menu.selected {color:#009cdc; cursor:default; padding: 10px 5px 15px 5px; }
@@ -23,8 +23,9 @@ h1 {padding: 0px; margin: 0px;}
 .h-text {margin: 0px 5px 0px 5px; padding: 13px 0px 15px 0px;}
 
 .content {padding: 0px 5px 0px 5px;}
-.content-box {display: inline-table; width: 100%; clear: left; padding: 10px 5px 8px 15px; background-color: #FFFFFF; margin-bottom: 15px; border-top: 1px solid #E6E7E9; border-bottom: 1px solid #E6E7E9;}
+.content-box {display: inline-table; width: 100%; clear: left; padding: 10px 5px 8px 15px; margin-bottom: 15px; border-top: 1px solid #E6E7E9; border-bottom: 1px solid #E6E7E9;}
 .content-name {font-size: 1.4em; color: #009cdc; float: left; margin-right: 25px;}
+.content-name-forms {font-size: 0.9em; color: #009cdc; float: left; margin-right: 25px;}
 
 .inputForms {padding: 5px 15px 5px 15px; display: inline-table; width: 50%; border-bottom: 1px solid #CCCCCC;}
 
@@ -45,7 +46,7 @@ input[type="checkbox"]:checked  {
     background-color: #00FF33;
 }
 
-.idTabs {float: left; display: inline-table; width: 100%; padding: 0 5px 0 5px;}
+.idTabs {float: left; display: inline-table;}
 .config {
 	padding: 0 0 0 13px;
 	float: right;
