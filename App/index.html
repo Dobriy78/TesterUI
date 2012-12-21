@@ -24,7 +24,6 @@ $(document).ready(function(){
 <div class="n-main-menu">
 <div class="idTabs">
   <ul>
-  <li><div class="logo">GW – Tester</div></li>
   <li><div class="h-text"><a class="menu" href="#testPage">Tester</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#editPage">Editor</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#aboutPage">F.a.q.</a></div></li>
@@ -36,41 +35,29 @@ $(document).ready(function(){
 
 <div id="configPage">
 <div class="content-box"><div class="content-name">Tester settings</div>
-</div>
-
 <form method="POST" id="myForm"/>
-<div class="cBox"><div class="cBoxText">Use default configuration:</div><div class="cBoxForm"><p class="field switch">
-    <input type="radio" id="radio1" name="field"/>
-    <input type="radio" id="radio2" name="field" checked />
-    <label for="radio1" id="lr1" class="cb-enable"><span>Yes</span></label>
-    <label for="radio2" id="lr2" class="cb-disable selected"><span>No&nbsp;</span></label>
-</p></div></div>
-<div class="cBoxSave"><div class="cBoxText">Select Tester.jar:</div><div class="cBoxForm"><a href='' class='btn btn-info'><label class="cabinet">Select file<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div></div>
-<div class="cBoxSave"><div class="cBoxText">Select TesterGW.xml:</div><div class="cBoxForm"><a href='' class='btn btn-info'><label class="cabinet">Select file<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></div>
-<div class="cBox"><div class="cBoxText">Save configuration as default:</div><div class="cBoxForm"><a href='' class='btn btn-danger'><label class="cabinet">Save config<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></div>
-<div class="cBoxSave"><div class="cBoxText">Use batch:</div><div class="cBoxForm"><p class="field switch">
-    <input type="radio" id="radio3" name="field"/>
-    <input type="radio" id="radio4" name="field" checked />
-    <label for="radio3" id="lr3" class="cb-enable"><span>Yes</span></label>
-    <label for="radio4" id="lr4" class="cb-disable selected"><span>No&nbsp;</span></label>
-</p></div></div>
+<div class="content-name-forms"><input type="checkbox" name="defaultSettings" id="defSettings"/> Use default settings:</div>
+<div class="content-name-forms"><a href='' class='menu'><label class="cabinet">Select Tester.jar<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div>
+<div class="content-name-forms"><a href='' class='menu'><label class="cabinet">Select TesterGW.xml<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div>
+<div class="content-name-forms"><a href='' class='menu'><label class="cabinet">Save config<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div>
+</div>
 <input type="hidden" id="testerJarPath"/>
 <input type="hidden" id="testerGWPath"/>
 </form>
 <script type="text/javascript" language="javascript">
 SI.Files.stylizeAll();
 </script>
+
 </div>
 
 <div id="testPage" class="content">
 <div class="content-box">
-<div class="content-name">Tester</div>
-<div class="content-name"><form method="POST" id="myForm2"/><a href='' class='btn btn-info'><label class="cabinet">Select Scenario's:<input type="file" id="file" multiple class='file' accept="application/xml"/>
-</label>
-</a>
+<form method="POST" id="myForm2"/>
+<div class="content-name-forms"><div class="squaredFour"><input type="checkbox" name="defaultSettings" id="squaredFour"/><label for="squaredFour"></label></div></div><div class="content-name-text">Use batch</div>
+<div class="content-name-text"><a href='' class=''><label class="cabinet">Select Scenario's:<input type="file" id="file" multiple class='file' accept="application/xml"/>
+</label></a></div>
 <input type="hidden" id="textArea"/>
 </form>
-</div>
 <div id="menu" class="menuList"></div>
 </div>
 
