@@ -1,3 +1,5 @@
+SI.Files.stylizeAll();
+
 var pPath = "..\\..\\GW-TESTER\\tester.config";
 var fs = require("fs"),
     sys = require("sys");
@@ -53,3 +55,6 @@ if (!err) {
 });
 
 */
+
+
+						

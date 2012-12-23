@@ -52,7 +52,7 @@ input[type="checkbox"]:checked  {
 .config {
 	padding: 7px 10px 3px 13px;
 	float: right;
-	background-image: url(../img/config.png);
+	background-image: url(../img/config_new.png);
 	background-repeat: no-repeat;
 	background-position: 0 21;
 }
