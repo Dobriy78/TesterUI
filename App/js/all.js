@@ -53,7 +53,7 @@ $('#file').change(function()
 		{
 			$("<option value=" +filess[i]+ ">" + filess[i].replace(/(\w+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"") + "</option>").appendTo('#scenarioSelect');
 		};
-	$("</select><div class='textTT hidden'><input name='runScenario' type='button' id='submit' onclick='mySFunction()' class='btn btn-info' value='Run scenario'/></div></form>").appendTo('#menu');
+	$("</select></form>").appendTo('#menu');
 	
 	
 });
@@ -74,7 +74,7 @@ function mySFunction()
 $('<div class="log"></div>').html('' + data.toString().replace(/(.*\|)/g,"").replace(/tester ConfigFile ScenarioName/gi,"Select scenario first").replace(/<-- Starting scenario:/gi,"Starting scenario: ").replace(/done/gi,"<span class=green>DONE</span>").replace(/check FAIL:/gi,"<span class=red>check FAIL: </span>").replace(/got error:/gi,"<span class=red>ERROR: </span>") + '').appendTo('#scenarioLog');
 
 });
-$('#qq').click(function(){
+$('#unPauseScenario').click(function(){
 	scenarioRun.stdin.write('a\n');
 });
 	scenarioRun.stderr.on('data', function (data) {
@@ -89,8 +89,10 @@ $('#qq').click(function(){
 // получение выбранного сценария и вывод его описания
 function displayResult()
 {
+//$("<div class='textTT hidden'><input name='runScenario' type='button' id='submit' onclick='mySFunction()' class='btn btn-info' value='Run scenario'/></div>").appendTo('#playButton');
 $('#scenarioDescription').empty();
-$(".textTT").removeClass("hidden");
+$(".content-name-forms").removeClass("hidden");
+
 var x=document.getElementById("scenarioSelect").selectedIndex;
 var y=document.getElementsByTagName("option")[x].value; 
 

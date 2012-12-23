@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <head>
-<title>Depo/X Tester</title>
+<title>GW Tester</title>
 <link href="styles/main.css" rel="stylesheet" type="text/css" media="all" />
 <link href="styles/tester.css" rel="stylesheet" type="text/css" media="all" />
  
@@ -14,29 +14,22 @@
 <script type="text/javascript" src="js/config.js"></script>
 </head>
 <body>
-<script>
-$(document).ready(function(){
-  $("a[href=#configPage]").click(function(){
-    $("#configPage").toggle(500);
-  });
-});
-</script>
-<div class="n-main-menu">
 <div class="idTabs">
+<div class="config"><div class="h-text"><a class="menu" href="#configPage">Settings</a></div></div>
+<div class="n-main-menu">
   <ul>
   <li><div class="h-text"><a class="menu" href="#testPage">Tester</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#editPage">Editor</a></div></li> 
   <li><div class="h-text"><a class="menu" href="#aboutPage">F.a.q.</a></div></li>
   </ul>
 </div>
-<div class="config"><div class="h-text"><a class="menu" href="#configPage" id="#flip">Settings</a></div></div>
 
 </div>
 
 <div id="configPage">
 <div class="content-box"><div class="content-name">Tester settings</div>
 <form method="POST" id="myForm"/>
-<div class="content-name-forms"><input type="checkbox" name="defaultSettings" id="defSettings"/> Use default settings:</div>
+<div class="content-name-forms"><div class="squaredFive"><input type="checkbox" name="defaultSettings" id="squaredFive"/><label for="squaredFive"></label></div><div class="content-name-text">Default settings</div></div>
 <div class="content-name-forms"><a href='' class='menu'><label class="cabinet">Select Tester.jar<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div>
 <div class="content-name-forms"><a href='' class='menu'><label class="cabinet">Select TesterGW.xml<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div>
 <div class="content-name-forms"><a href='' class='menu'><label class="cabinet">Save config<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div>
@@ -53,19 +46,22 @@ SI.Files.stylizeAll();
 <div id="testPage" class="content">
 <div class="content-box">
 <form method="POST" id="myForm2"/>
-<div class="content-name-forms"><div class="squaredFour"><input type="checkbox" name="defaultSettings" id="squaredFour"/><label for="squaredFour"></label></div></div><div class="content-name-text">Use batch</div>
-<div class="content-name-text"><a href='' class=''><label class="cabinet">Select Scenario's:<input type="file" id="file" multiple class='file' accept="application/xml"/>
+<div class="content-name-forms"><div class="squaredFour"><input type="checkbox" name="useBatch" id="squaredFour"/><label for="squaredFour"></label></div></div>
+<div class="content-name-text">Use batch</div>
+<div class="content-name-forms"><a href='' class='btn btn-info'><label class="cabinet">Select scenario file's:<input type="file" id="file" multiple class='file' accept="application/xml"/>
 </label></a></div>
 <input type="hidden" id="textArea"/>
 </form>
-<div id="menu" class="menuList"></div>
+<div class="content-name-forms"><div id="menu" class="menuList"></div></div>
+<div class="content-name-forms hidden"><input name='runScenario' type='button' id='submit' onclick='mySFunction()' class='btn btn-info' value='Run scenario'/></div>
+<div class="content-name-forms"><input name='unPauseScenario' type="button" id="unPauseScenario" class='btn btn-info' value="Pause"/></div>
 </div>
 
 
 <!--здесь вывод select menu-->
-<div id="menu"></div>
+<!--div id="menu"></div-->
 <!--здесь вывод select menu-->
-<button type="button" id="qq">Pause</button>
+
 <div class="main">
 <div class="text_container_l">
 <div class="text_container_r">
