@@ -57,4 +57,9 @@ if (!err) {
 */
 
 
-						
+$(function(){ // wait for document to load 
+ $('#T7').MultiFile({ 
+  list: '#T7-list'
+ }); 
+});
+		
