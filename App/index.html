@@ -24,7 +24,7 @@
 		<div class="menu-tabs"><a class="menu" href="#aboutPage">F.a.q.</a></div>
 	</div>
 	<div class="config-menu">
-		<div class="menu-tabs"><a class="menu" href="#configPage">Settings</a></div>
+		<div class="menu-tabs"><a class="menu-config" href="#configPage">Settings</a></div>
 	</div>
 </div>
 
@@ -33,16 +33,19 @@
 		<div class="content-box-name">Tester settings</div>
 	</div>
 <div class="content">
+
 	<form method="POST" id="myForm"/>
+<div class="config-box">
 <div class="config-box-text1"><div class="squaredFive"><input type="checkbox" name="defaultSettings" id="squaredFive"/><label for="squaredFive"></label></div>Default settings</div>
 	
 <div class="config-box-text2"><div class="squaredFive">&nbsp;</div><div class="congig-box-txt">Select Tester.jar</div><div class="config-box-btn"><a href='' class='btn btn-info'><label class="cabinet">Select<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div></div>
 <div class="config-box-text3"><div class="squaredFive">&nbsp;</div><div class="congig-box-txt">Select TesterGW.xml</div><div class="config-box-btn"><a href='' class='btn btn-info'><label class="cabinet">Select<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></div>
 <div class="config-box-text4"><div class="config-box-btn"><a href='' class='btn btn-danger'><label class="cabinet">Save config<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></div>
-<div class="config-box-text5">&nbsp;</div>
+</div>
 	<input type="hidden" id="testerJarPath"/>
 	<input type="hidden" id="testerGWPath"/>
 	</form>
+
 </div>
 </div>
 
@@ -66,7 +69,7 @@
 	<div class="main">
 		<div class="text_container_l"><div class="text_container_r">
 	<div class="text_l">
-	<div id="T7-list" class="hidden"></div>
+	<div id="T7-list" class="batch-box hidden"></div>
 
 		<!--здесь вывод описания сценария-->
 		<div class="description"><div id="scenarioDescription" class="textDescLog"></div></div>
