@@ -241,3 +241,30 @@ $(function(){ // wait for document to load
   list: '#T7-list'
  }); 
 });
+
+
+$(document).ready( function(){ 
+ $("#squaredFour").click(function(){
+	if ($('#squaredFour').is(':checked')) {
+	    $(".content-box-batchR").removeClass("hidden");
+	    $("#T7-list").removeClass("hidden");
+		$(".content-box-selectR").addClass("hidden");
+		$(".content-box-select").addClass("hidden");
+		$(".content-box-start").addClass("hidden");	
+		$("#scenarioDescription").addClass("hidden");
+		};
+	if ($('#squaredFour').is(':not(:checked)')) {
+	    $(".content-box-batchR").addClass("hidden");
+	    $("#T7-list").addClass("hidden");
+		$(".content-box-selectR").removeClass("hidden");
+		$(".content-box-select").removeClass("hidden");
+		$(".content-box-start").removeClass("hidden");
+		$("#scenarioDescription").removeClass("hidden");
+		}; 
+ });
+});
+
+
+
+
+

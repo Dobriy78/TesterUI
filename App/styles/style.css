@@ -1,12 +1,15 @@
 body {font-family: Arial, Helvetica, sans-serif; font-size: 100%; color:#22252e; background-color: #F7F7F7; padding: 0px; margin: 0px;}
 
+.top {background-color: #CCCCCC; width: 100%; display: inline-table; border-bottom: 1px solid #E6E7E9; padding: 5px;
+ border-top-left-radius: 10px 5px; border-top-right-radius: 10px 5px;}
+
 .idTabs {background-color: #FFFFFF; width: 100%; display: inline-table; border-bottom: 1px solid #E6E7E9;}
 
 .menu-tabs {margin: 0px 5px 0px 5px; padding: 13px 0px 15px 0px; float: left;}
 
 .main-menu {padding: 7px 10px 3px 10px; margin: 0; display: inline-table; width: auto; clear: left; float: left;}
 
-.config-menu {padding: 7px 10px 3px 13px; float: right; background-image: url(../img/config_new.png); background-repeat: no-repeat; background-position: 0 21;}
+.config-menu {padding: 7px 10px 3px 13px; float: right; background-image: url(../img/config.png); background-repeat: no-repeat; background-position: 0 21;}
 
 a.menu {color:#22252e; padding: 10px 5px 15px 5px; font-size: 1.08em; text-decoration:none!important}
 
@@ -22,9 +25,14 @@ a.menu.selected {color:#009cdc; cursor:default; padding: 10px 5px 15px 5px;}
 
 .content-box-btn {font-size: 0.9em; color: #009cdc; float: left; margin-right: 10px; padding: 0px 0px 0px 0px;}
 
-.content-box-text {font-size: 0.9em; color: #22252e; float: left; margin: 3px 0px 0px 5px; padding: 7px 20px 7px 0px; border-right: 1px solid #CCCCCC; cursor: default;}
+.content-box-text {font-size: 0.9em; color: #22252e; float: left; margin: 3px 0px 0px 5px; padding: 7px 20px 7px 0px; border-right: 1px solid #E6E7E9; cursor: default;}
 
-.content-box-textR {font-size: 0.9em; color: #22252e; float: left; margin: 3px 0px 2px 0px; padding: 1px 20px 1px 20px; border-left: 1px solid #FFFFFF; border-right: 1px solid #CCCCCC;}
+.content-box-textR {font-size: 0.9em; color: #22252e; float: left; margin: 3px 0px 2px 0px; padding: 1px 20px 1px 20px; border-left: 1px solid #FFFFFF; border-right: 1px solid #E6E7E9;}
+
+.content-box-batchR {font-size: 0.9em; color: #22252e; float: left; margin: 3px 0px 2px 0px; padding: 1px 20px 1px 20px; border-left: 1px solid #FFFFFF; border-right: 1px solid #E6E7E9;}
+.plus-separator {padding-right: 10px;} 
+
+.content-box-selectR {font-size: 0.9em; color: #22252e; float: left; margin: 3px 0px 2px 0px; padding: 1px 20px 1px 20px; border-left: 1px solid #FFFFFF; border-right: 1px solid #E6E7E9;}
 
 .content-box-select {font-size: 0.9em; color: #22252e; float: left; margin: 3px 0px 2px 0px; padding: 2px 5px 1px 20px; border-left: 1px solid #FFFFFF;}
 
@@ -123,7 +131,27 @@ input {padding: 0px; margin: 0px;}
 .btn-info.active {
   background-color: #31b0d5 \9;
 }
+.btn-danger {
+  color: white;
+  background-color: #bd362f;
+  *background-color: #a9302a;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger.active,
+.btn-danger.disabled,
+.btn-danger[disabled] {
+  color: white;
+  background-color: #ce3f38;
+  *background-color: #bd362f;
+}
+.btn-danger:active,
+.btn-danger.active {
+  background-color: #a9302a \9;
+}
 input[type=checkbox] {
 	visibility: hidden;
 }
@@ -200,7 +228,7 @@ input[type=button] {
 /* SQUARED FIVE */
 .squaredFive {
 	width: 17px;	
-	margin: 0px;
+	margin: 0px 15px 0px 0px;
 	position: relative;
 	display: inline-table;
 	float: left;
@@ -212,7 +240,7 @@ input[type=button] {
 	position: absolute;
 	width: 17px;
 	height: 17px;
-	top: 0;
+	top: 0; left: 0px;
 	border-radius: 4px;
 
 	/*-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
@@ -305,3 +333,15 @@ select:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
+.batch-box-text1 {font-size: 0.9em; color: #22252e; float: none; margin: 0px 0px 0px 5px; padding: 7px 10px 7px 10px; border-top: 1px solid #FFFFFF; border-bottom: 1px solid #E6E7E9; cursor: default;}
+.MultiFile-remove {float: right; display: inline-table; padding: 0px; margin: 0px; width: 18px; height: 18px;}
+
+
+.config-box-text1 {display: table; width: 400px; font-size: 0.9em; color: #22252e; float: none; margin: 0px 0px 0px 5px; padding: 13px 10px 12px 10px; border-bottom: 1px solid #E6E7E9; cursor: default;}
+.config-box-text2 {display: table; width: 400px; font-size: 0.9em; color: #22252e; float: none; margin: 0px 0px 0px 5px; padding: 7px 10px 7px 10px; border-top: 1px solid #FFFFFF; border-bottom: 1px dashed #E6E7E9; cursor: default;}
+.config-box-text3 {display: table; width: 400px; font-size: 0.9em; color: #22252e; float: none; margin: 0px 0px 0px 5px; padding: 7px 10px 7px 10px; border-top: 1px dashed #FFFFFF; border-bottom: 1px dashed #E6E7E9; cursor: default;}
+.config-box-text4 {display: table; width: 400px; font-size: 0.9em; color: #22252e; float: none; margin: 0px 0px 0px 5px; padding: 7px 10px 7px 10px; border-top: 1px dashed #FFFFFF; border-bottom: 1px solid #E6E7E9; cursor: default;}
+.config-box-text5 {display: table; width: 400px; font-size: 0.9em; color: #22252e; float: none; margin: 0px 0px 0px 5px; padding: 7px 10px 7px 10px; border-top: 1px solid #FFFFFF; cursor: default;}
+.congig-box-txt {display: inline-table; padding: 7px 0px 0px 0px;}
+.config-box-btn {display: inline-table; float: right;}
