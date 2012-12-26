@@ -1,6 +1,6 @@
 SI.Files.stylizeAll();
 
-var pPath = "..\\..\\GW-TESTER\\tester.config";
+var pPath = "..\\..\\GW-TESTER\\Tester.config";
 var fs = require("fs"),
     sys = require("sys");
 	
@@ -38,9 +38,12 @@ if ( UseDefault == "N" ) {
 });
 
 /* record neq config
-var configNew = "<UserSettings>\n<UseDefault>Y</UseDefault>\n<JarPath>C:\\Tester\\Tester.jar</JarPath>\n<GWPath>C:\\Tester\\TesterGW.xml</GWPath>\n<ScenarioPath>C:\\Tester\\Scenarios\\</ScenarioPath>\n</UserSettings>";
+function saveFunction()
+{
 
-fs.open("..\\..\\GW-TESTER\\tester.config", "w", 0644, function(err, file_handle) {
+var configNew = "<UserSettings>\n<UseDefault>" + UseDefault + "</UseDefault>\n<JarPath>" + JarPath + "</JarPath>\n<GWPath>" + GWPath + "</GWPath>\n<ScenarioPath>C:\\Tester\\Scenarios\\</ScenarioPath>\n</UserSettings>";
+
+fs.open("..\\..\\GW-TESTER\\Tester.config", "w", 0644, function(err, file_handle) {
 if (!err) {
     fs.write(file_handle, configNew, null, 'utf8', function(err, written) {
         if (!err) {
@@ -53,7 +56,7 @@ if (!err) {
 
 }
 });
-
+};
 */
 
 

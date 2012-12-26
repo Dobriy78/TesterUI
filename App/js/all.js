@@ -268,3 +268,26 @@ $(document).ready( function(){
 
 
 
+// record neq config
+function saveFunction()
+{
+var fs = require("fs"),
+    sys = require("sys");
+var TesterJarPath = $('#testerJarPath').val();
+var TesterGWPath = $('#testerGWPath').val();
+var configNew = "<UserSettings>\n<UseDefault>Y</UseDefault>\n<JarPath>" + TesterJarPath + "</JarPath>\n<GWPath>" + TesterGWPath + "</GWPath>\n<ScenarioPath>C:\\Tester\\Scenarios\\</ScenarioPath>\n</UserSettings>";
+
+fs.open("C:\\Tester.config", "w", 0644, function(err, file_handle) {
+if (!err) {
+    fs.write(file_handle, configNew, null, 'utf8', function(err, written) {
+        if (!err) {
+
+        } else {
+
+        }
+    });
+} else {
+
+}
+});
+};
