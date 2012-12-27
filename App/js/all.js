@@ -20,6 +20,11 @@ $('#testerJar').change(function()
 	document.getElementById('testerJarPath').value = testerJar;
 	var testerJarPath = $('#testerJarPath').val();
 	console.log('Tester Jar Path:		' + testerJarPath);
+	var checkTesterJar = testerJarPath.replace(/(.+[\\])+/g,"");
+    console.log('Check tester jar:		' + checkTesterJar);															 
+if ( checkTesterJar == "Tester.jar" ) {
+$('#squaredJar').attr('checked', true); $('.jarCorrect').empty(); $("<span>Tester.jar is selected</span>").appendTo('.jarCorrect');
+} else { $('#squaredJar').attr('checked', false); $('.jarCorrect').empty(); $("<span class='errorText'>Select a correct Tester.jar</span>").appendTo('.jarCorrect');};
 });
 
 // установка пути для работы скрипта
@@ -28,6 +33,15 @@ $('#testerGW').change(function()
     var testerGW = $('#testerGW').val().replace(/\\/g,"\\").replace(/\\TesterGW.xml/g,"");
 	document.getElementById('testerGWPath').value = testerGW;
 	var TesterGWPath = $('#testerGWPath').val();
+	
+	var originalPath = $('#testerGW').val().replace(/\\TesterGW.xml/g,"");
+    console.log('Original Path:			' + originalPath);
+	var checkTesterGw = $('#testerGW').val().replace(/(.+[\\])+/g,"");
+    console.log('Check tester gw:		' + checkTesterGw);
+if ( checkTesterGw == "TesterGW.xml" ) {
+$('#squaredGw').attr('checked', true); $('.gwCorrect').empty(); $("<span>TesterGW.xml is selected</span>").appendTo('.gwCorrect');
+} else { $('#squaredGw').attr('checked', false); $('.gwCorrect').empty(); $("<span class='errorText'>Select a correct TesterGW.xml</span>").appendTo('.gwCorrect');};
+
 	path = require('path');
 	console.log('Starting directory:		' + process.cwd());
 	try { process.chdir(TesterGWPath); console.log('New directory:			' + process.cwd());	}
@@ -51,7 +65,7 @@ $('#file').change(function()
 	$("<form method='POST' id='mySelect'><select id='scenarioSelect' onchange='displayResult()'><option>Scenario's</option>").appendTo('#menu');
 	for (i=0;i<filess.length;i++)
 		{
-			$("<option value=" +filess[i]+ ">" + filess[i].replace(/(\w+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"") + "</option>").appendTo('#scenarioSelect');
+			$("<option value=" +filess[i]+ ">" + filess[i].replace(/(.+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"") + "</option>").appendTo('#scenarioSelect');
 		};
 	$("</select></form>").appendTo('#menu');
 	
@@ -63,7 +77,7 @@ function mySFunction()
 {
 	$('#scenarioLog').empty();
 	var x=document.getElementById("scenarioSelect").selectedIndex;
-	var Scenario = document.getElementsByTagName("option")[x].value.replace(/(\w+[:\/]+)+/,"").replace(/\.xml/g,""); 
+	var Scenario = document.getElementsByTagName("option")[x].value.replace(/(.+[:\/]+)+/,"").replace(/\.xml/g,""); 
 	var TesterJarPath = $('#testerJarPath').val();
 	var spawn = require('child_process').spawn,
     scenarioRun = spawn('java', ['-jar', TesterJarPath, 'TesterGW.xml', Scenario]);
