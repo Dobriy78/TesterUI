@@ -11,6 +11,7 @@ var configPath = recordPath;
 var fs = require("fs"),
     sys = require("sys");
 	
+// check config file in the folder and read if exist
 $(document).ready(function(){
    $.ajax({
    type: "GET",
@@ -30,6 +31,8 @@ $(document).ready(function(){
 					
 if ( UseDefault == "Y" ) {
    $('#squaredDefault').attr('checked', true);
+//   $('#testerJar').attr('disabled', 'disabled');
+   $("#b1").removeClass("btn-info");
    $(".textTTH").addClass("hidden");
    $(".textTTTH").addClass("hidden");
 };
@@ -37,35 +40,14 @@ if ( UseDefault == "N" ) {
    $('#squaredDefault').attr('checked', false);
    $(".textTTH").removeClass("hidden");
    $(".textTTTH").removeClass("hidden");
-};});},
+};
+});},
  error: function(){ 
    console.log('Config path is not available!');
    //alert("NOT exists");  //здесь добавить обработку формы на запись
 } 
 	});
 });
-
-/* record neq config
-function saveFunction()
-{
-
-var configNew = "<UserSettings>\n<UseDefault>" + UseDefault + "</UseDefault>\n<JarPath>" + JarPath + "</JarPath>\n<GWPath>" + GWPath + "</GWPath>\n<ScenarioPath>C:\\Tester\\Scenarios\\</ScenarioPath>\n</UserSettings>";
-
-fs.open("..\\..\\GW-TESTER\\Tester.config", "w", 0644, function(err, file_handle) {
-if (!err) {
-    fs.write(file_handle, configNew, null, 'utf8', function(err, written) {
-        if (!err) {
-
-        } else {
-
-        }
-    });
-} else {
-
-}
-});
-};
-*/
 
 
 $(function(){ // wait for document to load 
