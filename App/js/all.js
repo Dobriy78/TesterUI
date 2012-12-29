@@ -65,7 +65,8 @@ $('#file').change(function()
 	$("<form method='POST' id='mySelect'><select id='scenarioSelect' onchange='displayResult()'><option>Scenario's</option>").appendTo('#menu');
 	for (i=0;i<filess.length;i++)
 		{
-			$("<option value=" +filess[i]+ ">" + filess[i].replace(/(.+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"") + "</option>").appendTo('#scenarioSelect');
+			$("<option value=" +filess[i].replace(/\u0020/g,"%")+ ">" + filess[i].replace(/(.+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"") + "</option>").appendTo('#scenarioSelect');
+			console.log('value:	' +filess[i].replace(/\u0020/g,"%"));
 		};
 	$("</select></form>").appendTo('#menu');
 	
@@ -114,7 +115,7 @@ var y=document.getElementsByTagName("option")[x].value;
 $(document).ready(function(){
 	$.ajax({
 		type: "GET",
-		url: document.getElementsByTagName("option")[x].value,
+		url: document.getElementsByTagName("option")[x].value.replace(/%/g," "),
 		dataType: "xml",
 		success: function(xml) {
 			$(xml).find('Scenario').each(function(){
@@ -287,11 +288,13 @@ function saveFunction()
 {
 var fs = require("fs"),
     sys = require("sys");
+if ($('#squaredDefault').is(':checked')) { var UseDefault = "Y"; };
+if ($('#squaredDefault').is(':not(:checked)')) { var UseDefault = "N"; };
 var TesterJarPath = $('#testerJarPath').val();
 var TesterGWPath = $('#testerGWPath').val();
-var configNew = "<UserSettings>\n<UseDefault>Y</UseDefault>\n<JarPath>" + TesterJarPath + "</JarPath>\n<GWPath>" + TesterGWPath + "</GWPath>\n<ScenarioPath>C:\\Tester\\Scenarios\\</ScenarioPath>\n</UserSettings>";
+var configNew = "<UserSettings>\n<UseDefault>" + UseDefault + "</UseDefault>\n<JarPath>" + TesterJarPath + "</JarPath>\n<GWPath>" + TesterGWPath + "</GWPath>\n<ScenarioPath>C:\\Tester\\Scenarios\\</ScenarioPath>\n</UserSettings>";
 
-fs.open("C:\\Tester.config", "w", 0644, function(err, file_handle) {
+fs.open( recordPath, "w", 0644, function(err, file_handle) {
 if (!err) {
     fs.write(file_handle, configNew, null, 'utf8', function(err, written) {
         if (!err) {

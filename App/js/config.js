@@ -1,13 +1,20 @@
 SI.Files.stylizeAll();
 
-var pPath = "..\\..\\GW-TESTER\\Tester.config";
+	path = require('path');
+var startPath = process.cwd();	
+	console.log('Starting path:		' + startPath);
+var recordPath = startPath.replace(/\\/g,"\\").replace(/(\Temp+.+)+/g,"GW-TESTER\\Tester.config");
+	console.log('Record Path:		' + recordPath);
+
+//var pPath = "..\\..\\GW-TESTER\\Tester.config";
+var configPath = recordPath;
 var fs = require("fs"),
     sys = require("sys");
 	
 $(document).ready(function(){
    $.ajax({
    type: "GET",
-   url: pPath,
+   url: configPath,
    dataType: "xml",
  success: function(xml) {
    $(xml).find('UserSettings').each(function(){
@@ -22,17 +29,18 @@ $(document).ready(function(){
    console.log('ScenarioPath: 		' + ScenarioPath);
 					
 if ( UseDefault == "Y" ) {
-   $('#default').attr('checked', true);
+   $('#squaredDefault').attr('checked', true);
    $(".textTTH").addClass("hidden");
    $(".textTTTH").addClass("hidden");
 };
 if ( UseDefault == "N" ) {
-   $('#default').attr('checked', false);
+   $('#squaredDefault').attr('checked', false);
    $(".textTTH").removeClass("hidden");
    $(".textTTTH").removeClass("hidden");
 };});},
  error: function(){ 
-   alert("NOT exists");  //здесь добавить обработку формы на запись
+   console.log('Config path is not available!');
+   //alert("NOT exists");  //здесь добавить обработку формы на запись
 } 
 	});
 });

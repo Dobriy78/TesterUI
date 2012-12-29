@@ -232,7 +232,7 @@ input[type=button] {
 }
 
 /* SQUARED FIVE */
-.squaredFive {
+.squaredDefault {
 	width: 17px;	
 	margin: 0px 15px 0px 0px;
 	position: relative;
@@ -241,7 +241,7 @@ input[type=button] {
 	padding: 0px;
 }
 
-.squaredFive label {
+.squaredDefault label {
 	cursor: pointer;
 	position: absolute;
 	width: 17px;
@@ -263,7 +263,7 @@ input[type=button] {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#fcfff4',GradientType=0 );
 }
 
-.squaredFive label:after {
+.squaredDefault label:after {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);
 	opacity: 0;
@@ -285,13 +285,13 @@ input[type=button] {
 	transform: rotate(-45deg);
 }
 
-.squaredFive label:hover::after {
+.squaredDefault label:hover::after {
 	/*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 	filter: alpha(opacity=30);
 	opacity: 0.5;*/
 }
 
-.squaredFive input[type=checkbox]:checked + label:after {
+.squaredDefault input[type=checkbox]:checked + label:after {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
 	opacity: 1;
