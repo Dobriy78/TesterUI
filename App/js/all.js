@@ -18,7 +18,7 @@ $('#testerJar').change(function()
 {
     var testerJar = $('#testerJar').val().replace(/\\/g,"\\");
 	document.getElementById('testerJarPath').value = testerJar;
-	var testerJarPath = $('#testerJarPath').val();
+	var TesterJarPath = $('#testerJarPath').val();
 	console.log('Tester Jar Path:		' + testerJarPath);
 	var checkTesterJar = testerJarPath.replace(/(.+[\\])+/g,"");
     console.log('Check tester jar:		' + checkTesterJar);															 
@@ -30,9 +30,9 @@ $('#squaredJar').attr('checked', true); $('.jarCorrect').empty(); $("<span>Teste
 // установка пути для работы скрипта
 $('#testerGW').change(function()
 {
-    var testerGW = $('#testerGW').val().replace(/\\/g,"\\").replace(/\\TesterGW.xml/g,"");
+    var testerGW = $('#testerGW').val().replace(/\\/g,"\\"); //.replace(/\\TesterGW.xml/g,"");
 	document.getElementById('testerGWPath').value = testerGW;
-	var TesterGWPath = $('#testerGWPath').val();
+	var TesterGWPath = $('#testerGWPath').val().replace(/\\TesterGW.xml/g,"");
 	
 	var originalPath = $('#testerGW').val().replace(/\\TesterGW.xml/g,"");
     console.log('Original Path:			' + originalPath);
@@ -80,6 +80,8 @@ function mySFunction()
 	var x=document.getElementById("scenarioSelect").selectedIndex;
 	var Scenario = document.getElementsByTagName("option")[x].value.replace(/(.+[:\/]+)+/,"").replace(/\.xml/g,""); 
 	var TesterJarPath = $('#testerJarPath').val();
+
+console.log('TesterJarPath:			' + TesterJarPath);
 	var spawn = require('child_process').spawn,
     scenarioRun = spawn('java', ['-jar', TesterJarPath, 'TesterGW.xml', Scenario]);
 	scenarioRun.stdout.on('data', function (data) {

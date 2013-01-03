@@ -9,7 +9,7 @@
 <!--script type="text/javascript" src="js/jquery-1.8.3.min.js"></script-->
 <script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
 <!--script type="text/javascript" src="js/prettyFile.js"></script-->
-<script type="text/javascript" src="js/all.js"></script>
+<!--script type="text/javascript" src="js/all.js"></script-->
 <script type="text/javascript" src="js/si.files.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/jquery.MultiFile.js"></script>
@@ -41,7 +41,7 @@
 	
 <div class="config-box-text2"><div class="squaredJar"><input type="checkbox" name="testerJar" id="squaredJar" disabled/><label for="squaredJar"></label></div><div class="config-box-txt"><span class="jarCorrect">Select Tester.jar</span></div><div class="config-box-btn"><a href='' class='btn btn-info' id='b1'><label class="cabinet">Select<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div></div>
 <div class="config-box-text3"><div class="squaredGw"><input type="checkbox" name="testerGw" id="squaredGw" disabled/><label for="squaredGw"></label></div><div class="config-box-txt"><span class="gwCorrect">Select TesterGW.xml</span></div><div class="config-box-btn"><a href='' class='btn btn-info'><label class="cabinet">Select<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></div>
-<div class="config-box-text4"><div class="config-box-btn"><a href='#' class='btn btn-danger' onClick="saveFunction()"><label class="cabinet">Save config</label></a></div></div>
+<div class="config-box-text4"><div class="config-box-btn"><a href='#' class='btn btn-danger' onClick="saveFunction()" id="recordButton"><label class="cabinet">Save config</label></a></div></div>
 </div>
 	<input type="hidden" id="testerJarPath"/>
 	<input type="hidden" id="testerGWPath"/>
@@ -58,7 +58,7 @@
 		<!--div class="content-box-name">Tester</div-->	
 		<div class="content-box-forms"><div class="squaredFour"><input type="checkbox" name="useBatch" id="squaredFour"/><label for="squaredFour"></label></div></div>
 		<div class="content-box-text">Use batch</div>
-		<div class="content-box-batchR hidden"><a href='' class='btn btn-info'><label class="cabinet"><span class="plus-separator">+</span>Add scenario's<input type="file" id="T7" accept="application/xml"/></label></a></div>		
+		<div class="content-box-batchR hidden"><a href='' class='btn btn-info'><label class="cabinet"><span class="add-to-batch"></span>Add scenario's<input type="file" id="T7" accept="application/xml"/></label></a></div>		
 		<div class="content-box-selectR"><a href='' class='btn btn-info'><label class="cabinet">Select scenario's<input type="file" id="file" multiple class='file' accept="application/xml"/>
 </label></a></div>
 		<input type="hidden" id="textArea"/>

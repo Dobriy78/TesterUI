@@ -246,7 +246,7 @@
             // Handle error
             MultiFile.error(ERROR);
 												
-            // 2007-06-24: BUG FIX - Thanks to Adrian Wróbel <adrian [dot] wrobel [at] gmail.com>
+            // 2007-06-24: BUG FIX - Thanks to Adrian Wrï¿½bel <adrian [dot] wrobel [at] gmail.com>
             // Ditch the trouble maker and add a fresh new element
             MultiFile.n--;
             MultiFile.addSlave(newEle[0], slave_count);
@@ -293,12 +293,14 @@
         var
          r = $('<div class="batch-box-text1"></div>'),
          v = String(slave.value || ''/*.attr('value)*/),
-         a = $('<div class="MultiFile-title" title="'+MultiFile.STRING.selected.replace('$file', v)+'">'+MultiFile.STRING.file.replace('$file', v.match(/[^\/\\]+$/gi)[0])+'</span>'),
+		 c = $('<a class="btn btn-info MultiFile-info" href="#">I</a>');
+		 d = $('<a class="btn btn-success MultiFile-play" href="#">P</a>');
+         a = $('<div class="MultiFile-title" title="'+MultiFile.STRING.selected.replace('$file', v)+'" id="'+MultiFile.STRING.selected.replace('$file', v).replace(/\u0020/g,"%")+'">'+MultiFile.STRING.file.replace('$file', v.match(/[^\/\\]+$/gi)[0]).replace(/(.+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"")+'</div>'),
          b = $('<a class="btn btn-danger MultiFile-remove" href="#'+MultiFile.wrapID+'">'+MultiFile.STRING.remove+'</a>');
         
         // Insert label
         MultiFile.list.append(
-         r.append(b, ' ', a)
+         r.append(d, c, b, ' ', a)
         );
         
         b
