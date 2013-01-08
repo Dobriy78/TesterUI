@@ -13,6 +13,7 @@
 <script type="text/javascript" src="js/si.files.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/jquery.MultiFile.js"></script>
+
 </head>
 <body>
 <!--div class="top">&nbsp;</div-->
@@ -39,8 +40,8 @@
 <div class="config-box">
 <div class="config-box-text1"><div class="squaredDefault"><input type="checkbox" name="defaultSettings" id="squaredDefault"/><label for="squaredDefault"></label></div>Default settings</div>
 	
-<div class="config-box-text2"><div class="squaredJar"><input type="checkbox" name="testerJar" id="squaredJar" disabled/><label for="squaredJar"></label></div><div class="config-box-txt"><span class="jarCorrect">Select Tester.jar</span></div><div class="config-box-btn"><a href='' class='btn btn-info' id='b1'><label class="cabinet">Select<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div></div>
-<div class="config-box-text3"><div class="squaredGw"><input type="checkbox" name="testerGw" id="squaredGw" disabled/><label for="squaredGw"></label></div><div class="config-box-txt"><span class="gwCorrect">Select TesterGW.xml</span></div><div class="config-box-btn"><a href='' class='btn btn-info'><label class="cabinet">Select<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></div>
+<div class="config-box-text2"><div class="squaredJar"><input type="checkbox" name="testerJar" id="squaredJar"/><label for="squaredJar"></label></div><div class="config-box-txt"><span class="jarCorrect">Select Tester.jar</span></div><div class="config-box-btn"><a href='' class='btn btn-info'><label class="cabinet">Select<input type="file" id="testerJar" class="file" accept="application/x-jar"/></label></a></div></div>
+<div class="config-box-text3"><div class="squaredGw"><input type="checkbox" name="testerGw" id="squaredGw"/><label for="squaredGw"></label></div><div class="config-box-txt"><span class="gwCorrect">Select TesterGW.xml</span></div><div class="config-box-btn"><a href='' class='btn btn-info'><label class="cabinet">Select<input type="file" id="testerGW" class='file' accept="application/xml"/></label></a></div></div>
 <div class="config-box-text4"><div class="config-box-btn"><a href='#' class='btn btn-danger' onClick="saveFunction()" id="recordButton"><label class="cabinet">Save config</label></a></div></div>
 </div>
 	<input type="hidden" id="testerJarPath"/>
@@ -92,7 +93,11 @@
 	<div class="content-box">
 		<div class="content-box-name">Editor</div>
 	</div>
-<div class="content">Здесь редактор</div>
+<div class="content">Здесь редактор
+<input type="file" id="batch" accept="application/xml"/>
+<input type="hidden" id="batchArea"/>
+<div id="batchSelect"></div>
+</div>
 </div>
 
 <div id="aboutPage">
@@ -102,4 +107,5 @@
 <div class="content">Здесь фак</div>
 </div>
 <script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/batch.js"></script>
 </body>

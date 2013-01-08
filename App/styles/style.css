@@ -495,3 +495,8 @@ MultiFile-remove
 a.MultiFile-remove { background-image: url(../img/close.png); background-repeat: no-repeat;}
 a.MultiFile-info { background-image: url(../img/info.png); background-repeat: no-repeat;}
 a.MultiFile-play { background-image: url(../img/play.png); background-repeat: no-repeat;}
+
+.deleteScenario { background-image: url(../img/close.png); background-repeat: no-repeat; background-position: center;}
+.deleteScenario:hover { background-image: url(../img/close.png); background-repeat: no-repeat; background-position: center;}
+
+button {padding: 0px; margin: 0px;}

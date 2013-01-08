@@ -32,7 +32,7 @@ $(document).ready(function(){
    };
    var GWPath = $(this).find('GWPath').text();
    if ( GWPath == "" || GWPath.replace(/.+\\/,"") != "TesterGW.xml" ) { 
-   console.log('GWPath:			not defined'); 
+   console.log('GWPath:				not defined'); 
    } else {
    var TesterGWPath = GWPath.replace(/\\/g,"\\"); document.getElementById('testerGWPath').value = TesterGWPath;
    path = require('path');
@@ -46,15 +46,9 @@ $(document).ready(function(){
 					
 if ( UseDefault == "Y" ) {
    $('#squaredDefault').attr('checked', true);
-//   $('#testerJar').attr('disabled', 'disabled');
-   $("#b1").removeClass("btn-info");
-   $(".textTTH").addClass("hidden");
-   $(".textTTTH").addClass("hidden");
 };
 if ( UseDefault == "N" ) {
    $('#squaredDefault').attr('checked', false);
-   $(".textTTH").removeClass("hidden");
-   $(".textTTTH").removeClass("hidden");
 };
 });},
  error: function(){ 

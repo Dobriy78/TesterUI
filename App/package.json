@@ -4,7 +4,7 @@
   "version": "12.02.2012.0001",
   "main": "index.html",
   "window": {
-    "icon": "img/test_64.png",
+    "icon": "img/favicon.png",
     "frame": true,
     "always-on-top": false,
     "toolbar": true,

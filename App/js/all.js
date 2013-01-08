@@ -20,7 +20,7 @@ $('#testerJar').change(function()
 	document.getElementById('testerJarPath').value = testerJar;
 	var TesterJarPath = $('#testerJarPath').val();
 	console.log('Tester Jar Path:		' + testerJarPath);
-	var checkTesterJar = testerJarPath.replace(/(.+[\\])+/g,"");
+	var checkTesterJar = TesterJarPath.replace(/(.+[\\])+/g,"");
     console.log('Check tester jar:		' + checkTesterJar);															 
 if ( checkTesterJar == "Tester.jar" ) {
 $('#squaredJar').attr('checked', true); $('.jarCorrect').empty(); $("<span>Tester.jar is selected</span>").appendTo('.jarCorrect');
