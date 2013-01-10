@@ -16,17 +16,24 @@ $('#batch').change(function()
    	document.getElementById('batchArea').value = batchfiles;
 	var i=1;
 	var filess = $('#batchArea').val(); //.split(/;\s?/);
+	var scenarioName = $('#batchArea').val().replace(/(\w+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"");
+	var scenarioPathValue = $('#batchArea').val().replace(/(\w+[:\/]+)+/,"");
 	//$("<form method='POST' id='mySelect'><select id='batchSelect' onchange='displayResult()'  multiple></select></form>").appendTo('#T7-list');
 	//for (i=0;i<filess.length;i++)
 	//	{
-			$("<div id=" +counter+ " class='config-box-text1'><span>" +counter+ " </span>" + filess.replace(/(\w+[:\/]+)+/,"").replace(/\_/g," ").replace(/\.xml/g,"") + "<input name='deleteScenario' type='button' id='deleteScenario' onclick='deleteScenario(" +counter+ ")' class='btn btn-danger deleteScenario' value=''/></div>").appendTo('#batchSelect');
+			$("<div id=" +counter+ " class='batch-box'><div class='batch-box-text'>" +counter+ " " + scenarioName + "</div><div class='btnScenario'><input name='scenarioPlay' type='button' id='scenarioPlay' onclick='scenarioPlay(" +counter+ ")' class='btnScenarioPlay' value='>'/></div><div class='btnScenario'><input name='scenarioInfo' type='button' id='scenarioInfo' onclick='scenarioInfo(" +counter+ ")' class='btnScenarioInfo' value='i'/></div><div class='btnScenario'><input name='scenarioDelete' type='button' id='scenarioDelete' onclick='scenarioDelete(" +counter+ ")' class='btnScenarioDelete' value='-'/></div></div>").appendTo('#batchSelect');
 			
 	//	};
 	//$("</select></form>").appendTo('#T7-list');
 });
 
 
-function deleteScenario(scenario) {
+function scenarioDelete(scenario) {
 	$("#" +scenario).remove();
 	//alert("AA" + scenario);
+}
+
+function scenarioInfo(info) {
+	//$("#" +scenario).remove();
+	alert("AA" + info);
 }
