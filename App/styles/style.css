@@ -517,6 +517,7 @@ button {padding: 0px; margin: 0px;}
   border: 0 none;
   text-decoration: none;
   border-radius: 2px;
+  background-image: url(../img/close.png); background-repeat: no-repeat; background-position: center;
 }
 .btnScenarioDelete:hover {
   color: #FFFFFF;
@@ -540,6 +541,7 @@ button {padding: 0px; margin: 0px;}
   border: 0 none;
   text-decoration: none;
   border-radius: 2px;
+  background-image: url(../img/info.png); background-repeat: no-repeat; background-position: center;
 }
 .btnScenarioInfo:hover {
   color: #FFFFFF;
@@ -563,6 +565,7 @@ button {padding: 0px; margin: 0px;}
   border: 0 none;
   text-decoration: none;
   border-radius: 2px;
+  background-image: url(../img/play.png); background-repeat: no-repeat; background-position: center;
 }
 .btnScenarioPlay:hover {
   color: #FFFFFF;
@@ -570,5 +573,4 @@ button {padding: 0px; margin: 0px;}
   background-color: #83a47c;
 }
 .batch-box {display: table; width: 100%; font-size: 0.9em; color: #22252e; float: none; margin: 0px; padding: 3px 10px 3px 10px; border-top: 1px solid #FFFFFF; border-bottom: 1px solid #E6E7E9; cursor: default;}
-.batch-box:hover {background-color: #DDDDDD;}
 .batch-box-text {padding: 6px 0px 6px 0px; display: table; float: left;}
